@@ -28,6 +28,8 @@
 
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <link  href="assets/about-us/fonts/icomoon/style.css" rel="stylesheet">
+    <link  href="assets/about-us/fonts/flaticon/font/flaticon.css" rel="stylesheet">
 </head>
 <body>
     @include('partials.header') <!-- Include the header here -->
