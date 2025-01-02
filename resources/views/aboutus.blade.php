@@ -22,7 +22,7 @@
     </div>
     <!-- Header End -->
     <div class="untree_co-section">
-        <div class="container"> 
+        <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
                 <h6 class="section-title bg-white text-center text-primary px-3">Learning Stories</h6>
@@ -73,7 +73,7 @@
         </div> <!-- /.container -->
     </div> <!-- /.untree_co-section -->
   <div class="untree_co-section bg-light">
-    <div class="container"> 
+    <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
         <h1 class="mb-5 mt-5">The Right Course For You...!</h1>
@@ -137,17 +137,17 @@
       <div class="row justify-content-between">
         <div class="col-lg-5 mb-5">
         <h6 class="section-title bg-white text-center text-primary px-3">Learning Stories</h6>
-        <h1 class="mb-5">About Us</h1>
-          <p data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <h1 class="mb-5">Unleashing Creativity Through Film and Media Excellence</h1>
+          <p data-aos="fade-up" data-aos-delay="100" style="text-align:justify;">Reelcraft Academy provides hands-on training in film and media production, equipping aspiring filmmakers, writers, and creators with the skills needed to succeed. Our curriculum covers scriptwriting, cinematography, editing, and post-production, guided by industry experts. Students gain real-world experience through projects, workshops, and internships, with certification and career support. We foster a creative environment to help creatives thrive in storytelling.</p>
           <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
-            <li>Separated they live</li>
-            <li>Bookmarksgrove right at the coast</li>
-            <li>large language ocean</li>
+            <li>Covers all aspects of filmmaking</li>
+            <li>Learn from industry experts</li>
+            <li>Earn a recognized certificate</li>
           </ul>
 
           <div class="row count-numbers mb-5">
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-              <span class="counter d-block"><span data-number="12023">0</span><span>+</span></span>
+              <span class="counter d-block"><span data-number="15023">0</span><span>+</span></span>
               <span class="caption-2">No. Students</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -155,7 +155,7 @@
               <span class="caption-2">No. Teachers</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <span class="counter d-block"><span data-number="12">0</span><span></span></span>
+              <span class="counter d-block"><span data-number="13">0</span><span></span></span>
               <span class="caption-2">No. Awards</span>
             </div>
           </div>
@@ -166,7 +166,7 @@
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
           <div class="bg-1 mt-5"></div>
-            <img src="assets/img/aboutus_section.jpg" alt="Image" class="img-fluid rounded">
+            <img src="assets\img\aboutustwo.jpg" alt="Image" class="img-fluid rounded">
           </a>
         </div>
       </div>
@@ -227,7 +227,7 @@
               <h3 class="pricing-plan-title">Starter</h3>
               <div class="price"><span class="fig">$50.99</span><span>/month</span></div>
               <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              
+
               <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
             </div>
           </div>
@@ -240,7 +240,7 @@
               <h3 class="pricing-plan-title">Business</h3>
               <div class="price"><span class="fig">$99.99</span><span>/month</span></div>
               <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              
+
               <p><a href="#" class="btn btn-primary">Get Started</a></p>
             </div>
           </div>
@@ -253,7 +253,7 @@
               <h3 class="pricing-plan-title">Premium</h3>
               <div class="price"><span class="fig">$199.99</span><span>/month</span></div>
               <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              
+
               <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
             </div>
           </div>
