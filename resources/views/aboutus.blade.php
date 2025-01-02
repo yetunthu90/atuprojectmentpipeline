@@ -215,7 +215,7 @@
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
         <h6 class="section-title bg-white text-center text-primary px-3 mt-5">Pricings</h6>
         <h1 class="mb-5">We Have Best Education!</h1>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <p> Our programs combine practical expertise with industry insights, ensuring students master the craft and succeed in the competitive world of visual storytelling. Join us to transform your passion for film into a career-ready skillset.</p>
         </div>
       </div>
       <div class="row">
