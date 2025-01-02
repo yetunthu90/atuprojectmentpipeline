@@ -38,7 +38,7 @@
                     </div>
                 </div>
             </div>
-             
+
             <div class="owl-carousel-item position-relative">
                 <img class="img-fluid" src="assets/img/home_c.png" alt="" style="height: 600px;">
                 <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center" style="background: rgba(24, 29, 56, .7);">
@@ -125,6 +125,8 @@
                           cinematography to editing and post-production, ensuring our students develop a well-rounded skill set.
                            At Reelcraft Academy, we blend traditional techniques with cutting-edge technology, empowering
                             students to explore and push the boundaries of modern storytelling.</p>
+                    <p class="mb-4">Reelcraft Academy is a premier institution dedicated to nurturing creativity and innovation in the art of storytelling through film and media. With a focus on hands-on learning and real-world experience, we offer comprehensive programs designed to equip aspiring filmmakers, writers, and digital creators with the tools they need to bring their visions to life. Our curriculum spans every aspect of the filmmaking process, from scriptwriting and cinematography to editing and post-production, ensuring our students develop a well-rounded skill set. At Reelcraft Academy, we blend traditional techniques with cutting-edge technology, empowering students to explore and push the boundaries of modern storytelling.</p>
+                    <p class="mb-4">Our vibrant community of passionate educators and industry professionals fosters a collaborative and inspiring environment where creativity thrives. Students benefit from access to state-of-the-art facilities, expert mentorship, and networking opportunities with leaders in the media industry. Whether you're an aspiring director, a budding screenwriter, or a visionary editor, Reelcraft Academy provides a supportive platform to develop your talents and make your mark in the world of film and digital media. Join us and become part of a legacy that shapes the storytellers of tomorrow.</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
@@ -133,16 +135,16 @@
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certification</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Diverse Course Offerings</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Online Classes</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Industry-Relevant Curriculum</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Creative Community</p>
                         </div>
                     </div>
                     <a class="btn btn-primary py-3 px-5 mt-2" href="{{ route('about') }}">Read More</a>
