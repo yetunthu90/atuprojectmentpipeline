@@ -118,8 +118,8 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                     <h1 class="mb-4">Welcome to Reelcraft Academy</h1>
-                    <p class="mb-4" style="text-align:justify;">Reelcraft Academy is a leading institution dedicated to fostering creativity and innovation in storytelling through film and media. Our hands-on programs cover all aspects of filmmaking, from scriptwriting to post-production, blending traditional techniques with cutting-edge technology to empower aspiring creators.</p>
-                    <p class="mb-4" style="text-align:justify;">With expert mentorship, state-of-the-art facilities, and industry connections, we provide a collaborative space for students to thrive. Whether you’re a future director, writer, or editor, Reelcraft Academy equips you with the skills and opportunities to shape the future of storytelling.</p>
+                    <p class="mb-4">Reelcraft Academy is a premier institution dedicated to nurturing creativity and innovation in the art of storytelling through film and media. With a focus on hands-on learning and real-world experience, we offer comprehensive programs designed to equip aspiring filmmakers, writers, and digital creators with the tools they need to bring their visions to life. Our curriculum spans every aspect of the filmmaking process, from scriptwriting and cinematography to editing and post-production, ensuring our students develop a well-rounded skill set. At Reelcraft Academy, we blend traditional techniques with cutting-edge technology, empowering students to explore and push the boundaries of modern storytelling.</p>
+                    <p class="mb-4">Our vibrant community of passionate educators and industry professionals fosters a collaborative and inspiring environment where creativity thrives. Students benefit from access to state-of-the-art facilities, expert mentorship, and networking opportunities with leaders in the media industry. Whether you're an aspiring director, a budding screenwriter, or a visionary editor, Reelcraft Academy provides a supportive platform to develop your talents and make your mark in the world of film and digital media. Join us and become part of a legacy that shapes the storytellers of tomorrow.</p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
@@ -329,7 +329,7 @@
                 <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="team-item bg-light">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid" src="assets/img/team-2.jpg" alt="" style="height: 250px;">
                         </div>
                         <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                             <div class="bg-light d-flex justify-content-center pt-2 px-1">
@@ -395,35 +395,35 @@
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets\img\feedbackone.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Emma Carter</h5>
-                    <p>Aspiring Filmmaker</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-1.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Reelcraft Academy has been a game-changer for me. The hands-on projects and mentorship from experienced instructors have given me the confidence and skills to bring my stories to life.</p>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets\img\feedbackfour.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Liam Harris</h5>
-                    <p>Screenwriter</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-2.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">The scriptwriting courses at Reelcraft Academy helped me refine my storytelling techniques. The feedback from instructors and peers has been invaluable in shaping my craft.</p>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets\img\feedbacktwo.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Emily Martinez</h5>
-                    <p>Video Editor</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-3.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Reelcraft’s editing workshops are top-notch! The access to industry-standard tools and real-world projects prepared me to work confidently in professional environments.</p>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets\img\feedbackthree - Copy.jpg" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Noah Patel</h5>
-                    <p>Cinematographer</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="assets/img/testimonial-4.jpg" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Client Name</h5>
+                    <p>Profession</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Learning cinematography with Reelcraft Academy has been an incredible journey. The instructor's expertise and the practical sessions allowed me to master camera techniques and visual storytelling.</p>
+                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
                     </div>
                 </div>
             </div>
