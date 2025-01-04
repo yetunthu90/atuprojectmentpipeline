@@ -270,8 +270,8 @@
         </div>
         <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
         <h6 class="section-title bg-white text-center text-primary px-3 mt-5">Why Choose Us</h6>
-        <h1 class="mb-5">We Have Best Education!</h1>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
+        <h1 class="mb-5">Best in the class!</h1>
+          <p>Our application stands out for its user-friendly interface, robust features, and seamless performance. We’ve designed it with your needs in mind, offering intuitive functionality that saves you time and enhances productivity. Whether you're looking for advanced features, reliable security, or consistent updates, our app provides a complete solution that grows with you. Choose our application for a smooth, efficient experience and the support you deserve.</p>
 
           <div class="custom-accordion" id="accordion_1">
             <div class="accordion-item">
@@ -286,8 +286,7 @@
                       <img src="assets/img/why_choose_b.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div style="margin-left:10px;">
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                      <p>Our teachers and staff are the heart of our community. Their dedication, passion, and commitment to excellence create a supportive and inspiring environment where students thrive.</p>
                     </div>
                   </div>
                 </div>
@@ -296,7 +295,7 @@
 
             <div class="accordion-item">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We Value Good Characters</button>
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">We Value Our Customers</button>
               </h2>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
                 <div class="accordion-body">
@@ -305,8 +304,7 @@
                       <img src="assets/img/why_choose_c.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div style="margin-left:10px;">
-                      <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. </p>
-                      <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+                      <p>At the core of everything we do is a deep respect for our customers. We are committed to providing exceptional service, listening to your needs, and delivering solutions that exceed expectations.</p>
                     </div>
                   </div>
                 </div>
@@ -314,7 +312,7 @@
             </div> <!-- .accordion-item -->
             <div class="accordion-item">
               <h2 class="mb-0">
-                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Your Children are Safe</button>
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">High Quality Projects</button>
               </h2>
 
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
@@ -324,8 +322,7 @@
                       <img src="assets/img/why_choose_d.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div style="margin-left:10px;">
-                      <p >When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</p>
-                      <p >Pityful a rethoric question ran over her cheek, then she continued her way.</p>
+                      <p >We take pride in delivering high-quality projects that meet the highest standards of excellence. Each project is carefully planned, executed, and tested to ensure it not only meets but exceeds expectations.</p>
                     </div>
                   </div>
 
