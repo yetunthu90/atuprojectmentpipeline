@@ -74,12 +74,12 @@
                 <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="category">Web Development</p>
+                    <p class="category">Cinematography Basics</p>
                     <p class="price">$169</p>
                 </div>
 
                 <h3><a href="course-details.html">Website Design</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <p class="description">Explore the art of visual storytelling through camera work, lighting techniques, and shot composition to enhance your filmmaking skills.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-1-2.jpg" class="img-fluid" alt="">
@@ -104,8 +104,8 @@
                     <p class="price">$250</p>
                 </div>
 
-                <h3><a href="course-details.html">Search Engine Optimization</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="course-details.html">Film Editing Techniques</a></h3>
+                <p class="description">Understand the fundamentals of video editing using software like Adobe Premiere Pro or Final Cut. Learn to cut, transition, and color-grade your footage.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-2-2.jpg" class="img-fluid" alt="">
@@ -130,8 +130,9 @@
                     <p class="price">$250</p>
                 </div>
 
-                <h3><a href="course-details.html">Copywriting</a></h3>
-                <p class="description">Et architecto provident deleniti facere repellat nobis iste. Id facere quia quae dolores dolorem tempore.</p>
+                <h3><a href="course-details.html">Sound Design and Audio Editing</a></h3>
+                <p class="description">Discover the role of sound in cinema, including recording, editing, and mixing to create an immersive audio experience.
+                </p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
                     <img src="assets/img/trainers/trainer-3-2.jpg" class="img-fluid" alt="">
