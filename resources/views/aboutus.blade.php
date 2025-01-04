@@ -22,62 +22,62 @@
     </div>
     <!-- Header End -->
     <div class="untree_co-section">
-        <div class="container"> 
+        <div class="container">
         <div class="row justify-content-center mb-5">
             <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
                 <h6 class="section-title bg-white text-center text-primary px-3">Learning Stories</h6>
-                <h1 class="mb-5">We Have Best Education!</h1>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h1 class="mb-5">Master Video Editing with Us!</h1>
+            <p>Transform your creativity into stunning visuals. Learn from the best to become a pro video editor.</p>
             </div>
         </div>
         <div class="row">
             <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="feature">
-                <h3>Music Class</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h3>Editing Basics</h3>
+                <p>Learn the fundamentals of video editing, including timelines, trimming, and transitions.</p>
             </div>
             </div>
             <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="feature">
-                <h3>Math Class</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h3>Color Grading</h3>
+                <p>Master the art of color correction and grading to bring your visuals to life.</p>
             </div>
             </div>
             <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="feature">
-                <h3>English Class</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h3>Advanced Effects</h3>
+                <p>Explore advanced techniques, including visual effects, animations, and motion graphics.</p>
             </div>
             </div>
 
 
             <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay=100">
             <div class="feature">
-                <h3>Reading for Kids</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h3>Audio Editing</h3>
+                <p>Learn how to sync audio, remove noise, and add sound effects for professional results.</p>
             </div>
             </div>
             <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="feature">
-                <h3>History Class</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h3>Software Tutorials</h3>
+                <p>Step-by-step guides on popular editing tools like Adobe Premiere, Final Cut Pro, and DaVinci Resolve.</p>
             </div>
             </div>
             <div class="col-6 col-sm-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
             <div class="feature">
-                <h3>Music</h3>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                <h3>Storyboarding</h3>
+                <p>Understand the importance of planning and storyboarding for seamless storytelling.</p>
             </div>
             </div>
         </div>
         </div> <!-- /.container -->
     </div> <!-- /.untree_co-section -->
   <div class="untree_co-section bg-light">
-    <div class="container"> 
+    <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-        <h1 class="mb-5 mt-5">The Right Course For You...!</h1>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <h1 class="mb-5 mt-5">The Perfect Course for Aspiring Editors!</h1>
+          <p>Master the art of video editing with hands-on training from industry professionals. Whether you're a beginner or looking to upskill, we have the right course for you.</p>
         </div>
       </div>
       <div class="row">
@@ -89,8 +89,8 @@
                 <div class="text-primary"><span class="uil uil-book-open"></span> <span>43 lesson</span></div>
                 <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
               </div>
-              <h3>Education Program Title</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet once is consectetur adipisicing elit optio.</p>
+              <h3>Basic Video Editing</h3>
+              <p class="mb-4">Learn the fundamentals of video editing, including timeline management, basic transitions, and essential tools.</p>
               <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
                 <div><span class="price">$87.00</span></div>
               </div>
@@ -105,8 +105,8 @@
                 <div class="text-primary"><span class="uil uil-book-open"></span> <span>43 lesson</span></div>
                 <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
               </div>
-              <h3>Education Program Title</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet once is consectetur adipisicing elit optio.</p>
+              <h3>Advanced Editing Techniques</h3>
+              <p class="mb-4">Enhance your editing skills with advanced transitions, color grading, and sound design techniques.</p>
               <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
                 <div><span class="price">$93.00</span></div>
               </div>
@@ -121,8 +121,8 @@
                 <div class="text-primary"><span class="uil uil-book-open"></span> <span>43 lesson</span></div>
                 <div class="review"><span class="icon-star"></span> <span>4.8</span></div>
               </div>
-              <h3>Education Program Title</h3>
-              <p class="mb-4">Lorem ipsum dolor sit amet once is consectetur adipisicing elit optio.</p>
+              <h3>Special Effects Masterclass</h3>
+              <p class="mb-4">Dive into the world of special effects, motion graphics, and green screen techniques for cinematic results.</p>
               <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
                 <div><span class="price">$65.00</span></div>
               </div>
@@ -137,17 +137,17 @@
       <div class="row justify-content-between">
         <div class="col-lg-5 mb-5">
         <h6 class="section-title bg-white text-center text-primary px-3">Learning Stories</h6>
-        <h1 class="mb-5">About Us</h1>
-          <p data-aos="fade-up" data-aos-delay="100">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <h1 class="mb-5">Unleashing Creativity Through Film and Media Excellence</h1>
+          <p data-aos="fade-up" data-aos-delay="100" style="text-align:justify;">Reelcraft Academy provides hands-on training in film and media production, equipping aspiring filmmakers, writers, and creators with the skills needed to succeed. Our curriculum covers scriptwriting, cinematography, editing, and post-production, guided by industry experts. Students gain real-world experience through projects, workshops, and internships, with certification and career support. We foster a creative environment to help creatives thrive in storytelling.</p>
           <ul class="list-unstyled ul-check mb-5 primary" data-aos="fade-up" data-aos-delay="200">
-            <li>Separated they live</li>
-            <li>Bookmarksgrove right at the coast</li>
-            <li>large language ocean</li>
+            <li>Covers all aspects of filmmaking</li>
+            <li>Learn from industry experts</li>
+            <li>Earn a recognized certificate</li>
           </ul>
 
           <div class="row count-numbers mb-5">
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="0">
-              <span class="counter d-block"><span data-number="12023">0</span><span>+</span></span>
+              <span class="counter d-block"><span data-number="15023">0</span><span>+</span></span>
               <span class="caption-2">No. Students</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
@@ -155,7 +155,7 @@
               <span class="caption-2">No. Teachers</span>
             </div>
             <div class="col-4 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-              <span class="counter d-block"><span data-number="12">0</span><span></span></span>
+              <span class="counter d-block"><span data-number="13">0</span><span></span></span>
               <span class="caption-2">No. Awards</span>
             </div>
           </div>
@@ -166,7 +166,7 @@
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
           <div class="bg-1 mt-5"></div>
-            <img src="assets/img/aboutus_section.jpg" alt="Image" class="img-fluid rounded">
+            <img src="assets\img\aboutustwo.jpg" alt="Image" class="img-fluid rounded">
           </a>
         </div>
       </div>
@@ -215,7 +215,7 @@
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
         <h6 class="section-title bg-white text-center text-primary px-3 mt-5">Pricings</h6>
         <h1 class="mb-5">We Have Best Education!</h1>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <p> Our programs combine practical expertise with industry insights, ensuring students master the craft and succeed in the competitive world of visual storytelling. Join us to transform your passion for film into a career-ready skillset.</p>
         </div>
       </div>
       <div class="row">
@@ -227,7 +227,7 @@
               <h3 class="pricing-plan-title">Starter</h3>
               <div class="price"><span class="fig">$50.99</span><span>/month</span></div>
               <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              
+
               <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
             </div>
           </div>
@@ -240,7 +240,7 @@
               <h3 class="pricing-plan-title">Business</h3>
               <div class="price"><span class="fig">$99.99</span><span>/month</span></div>
               <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              
+
               <p><a href="#" class="btn btn-primary">Get Started</a></p>
             </div>
           </div>
@@ -253,7 +253,7 @@
               <h3 class="pricing-plan-title">Premium</h3>
               <div class="price"><span class="fig">$199.99</span><span>/month</span></div>
               <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              
+
               <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
             </div>
           </div>
