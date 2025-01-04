@@ -68,8 +68,8 @@
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-graduation-cap text-primary mb-4"></i>
-                            <h5 class="mb-3">Sreekutty Instructors</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <h5 class="mb-3">Best Instructors</h5>
+                            <p>Exceptional instructors who are highly knowledgeable, patient, and passionate about teaching.</p>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
                             <h5 class="mb-3">Online Classes</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <p>Convenient and well-structured online classes that provide flexibility without compromising quality.</p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-home text-primary mb-4"></i>
                             <h5 class="mb-3">Home Projects</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <p>Home projects are a fantastic way to apply what we've learned and reinforce concepts.</p>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-book-open text-primary mb-4"></i>
                             <h5 class="mb-3">Book Library</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <p>The book library is an excellent resource, offering a diverse collection of materials.</p>
                         </div>
                     </div>
                 </div>
@@ -118,8 +118,8 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">About Us</h6>
                     <h1 class="mb-4">Welcome to Reelcraft Academy</h1>
-                    <p class="mb-4">Reelcraft Academy is a premier institution dedicated to nurturing creativity and innovation in the art of storytelling through film and media. With a focus on hands-on learning and real-world experience, we offer comprehensive programs designed to equip aspiring filmmakers, writers, and digital creators with the tools they need to bring their visions to life. Our curriculum spans every aspect of the filmmaking process, from scriptwriting and cinematography to editing and post-production, ensuring our students develop a well-rounded skill set. At Reelcraft Academy, we blend traditional techniques with cutting-edge technology, empowering students to explore and push the boundaries of modern storytelling.</p>
-                    <p class="mb-4">Our vibrant community of passionate educators and industry professionals fosters a collaborative and inspiring environment where creativity thrives. Students benefit from access to state-of-the-art facilities, expert mentorship, and networking opportunities with leaders in the media industry. Whether you're an aspiring director, a budding screenwriter, or a visionary editor, Reelcraft Academy provides a supportive platform to develop your talents and make your mark in the world of film and digital media. Join us and become part of a legacy that shapes the storytellers of tomorrow.</p>
+                    <p class="mb-4" style="text-align: justify;">Reelcraft Academy is a premier institution dedicated to nurturing creativity and innovation in the art of storytelling through film and media. With a focus on hands-on learning and real-world experience, we offer comprehensive programs designed to equip aspiring filmmakers, writers, and digital creators with the tools they need to bring their visions to life. Our curriculum spans every aspect of the filmmaking process, from scriptwriting and cinematography to editing and post-production, ensuring our students develop a well-rounded skill set. At Reelcraft Academy, we blend traditional techniques with cutting-edge technology, empowering students to explore and push the boundaries of modern storytelling.</p>
+                    <!-- <p class="mb-4" style="text-align: justify;">Our vibrant community of passionate educators and industry professionals fosters a collaborative and inspiring environment where creativity thrives. Students benefit from access to state-of-the-art facilities, expert mentorship, and networking opportunities with leaders in the media industry. Whether you're an aspiring director, a budding screenwriter, or a visionary editor, Reelcraft Academy provides a supportive platform to develop your talents and make your mark in the world of film and digital media. Join us and become part of a legacy that shapes the storytellers of tomorrow.</p> -->
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Skilled Instructors</p>
