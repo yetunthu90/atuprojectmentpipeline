@@ -76,8 +76,8 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-        <h1 class="mb-5 mt-5">The Perfect Course for Aspiring Editors!</h1>
-          <p>Master the art of video editing with hands-on training from industry professionals. Whether you're a beginner or looking to upskill, we have the right course for you.</p>
+        <h1 class="mb-5 mt-5">The Right Course For You...!</h1>
+          <p>Our Movie Making Course offers everything you need to become a filmmaker. Learn scriptwriting, cinematography, editing, and sound design through expert guidance and hands-on projects. Whether you're a beginner or looking to refine your skills, this course helps bring your creative vision to life and advance your filmmaking journey.</p>
         </div>
       </div>
       <div class="row">
