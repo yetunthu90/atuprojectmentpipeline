@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\CourseController;
 
 Route::get('/', function () {
     return view('index');
@@ -22,5 +23,13 @@ Route::get('/dashboard', function () {
 Route::get('/join_now', function () {
     return view('join_now');
 })->name('join_now');
+
+Route::get('/courses', [CourseController::class, 'index'])->name('courses');
+Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
+Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
+Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.show');
+Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('courses.edit');
+Route::post('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
+Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 
 

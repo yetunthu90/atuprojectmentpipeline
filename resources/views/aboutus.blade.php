@@ -83,7 +83,7 @@
       <div class="row">
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="custom-media">
-            <a href="#"><img src="assets/img/about-a.jpg" alt="Image" class="img-fluid" style="height: 250px;"></a>
+            <a href="#"><img src="asset/img/about-a.jpg" alt="Image" class="img-fluid" style="height: 250px;"></a>
             <div class="custom-media-body">
               <div class="d-flex justify-content-between pb-3">
                 <div class="text-primary"><span class="uil uil-book-open"></span> <span>43 lesson</span></div>
@@ -99,7 +99,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="custom-media">
-            <a href="#"><img src="assets/img/about-b.jpg" alt="Image" class="img-fluid" style="height: 250px;"></a>
+            <a href="#"><img src="asset/img/about-b.jpg" alt="Image" class="img-fluid" style="height: 250px;"></a>
             <div class="custom-media-body">
               <div class="d-flex justify-content-between pb-3">
                 <div class="text-primary"><span class="uil uil-book-open"></span> <span>43 lesson</span></div>
@@ -115,7 +115,7 @@
         </div>
         <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
           <div class="custom-media">
-            <a href="#"><img src="assets/img/about-c.jpeg" alt="Image" class="img-fluid" style="height: 250px;"></a>
+            <a href="#"><img src="asset/img/about-c.jpeg" alt="Image" class="img-fluid" style="height: 250px;"></a>
             <div class="custom-media-body">
               <div class="d-flex justify-content-between pb-3">
                 <div class="text-primary"><span class="uil uil-book-open"></span> <span>43 lesson</span></div>
@@ -161,12 +161,12 @@
           </div>
 
           <p data-aos="fade-up" data-aos-delay="200">
-            <a href="#" class="btn btn-primary mr-1">Admission</a>
+            <a href="" class="btn btn-primary mr-1">Admission</a>
           </p>
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
           <div class="bg-1 mt-5"></div>
-            <img src="assets\img\aboutustwo.jpg" alt="Image" class="img-fluid rounded">
+            <img src="asset\img\aboutustwo.jpg" alt="Image" class="img-fluid rounded">
           </a>
         </div>
       </div>
@@ -185,7 +185,7 @@
         <div class="col-lg-6"  data-aos="fade-up" data-aos-delay="100">
           <div class="media-h d-flex h-100">
             <figure>
-              <img src="assets/img/about_one.jpg" alt="Image">
+              <img src="asset/img/about_one.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
               <h2 class="mb-3"><a href="#">Education for Tomorrow's Leaders</a></h2>
@@ -197,7 +197,7 @@
         <div class="col-lg-6"  data-aos="fade-up" data-aos-delay="200">
           <div class="media-h d-flex h-100">
             <figure>
-              <img src="assets/img/about_two.jpg" alt="Image">
+              <img src="asset/img/about_two.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
               <h2 class="mb-3"><a href="#">Enroll Your Kids This Summer to get 30% off</a></h2>
@@ -266,7 +266,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-5 mr-auto mb-5 mb-lg-0 mt-5"  data-aos="fade-up" data-aos-delay="0">
-          <img src="assets/img/why_choose_a.jpg" alt="image" class="img-fluid mt-5">
+          <img src="asset/img/why_choose_a.jpg" alt="image" class="img-fluid mt-5">
         </div>
         <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
         <h6 class="section-title bg-white text-center text-primary px-3 mt-5">Why Choose Us</h6>
@@ -283,7 +283,7 @@
                 <div class="accordion-body">
                   <div class="d-flex">
                     <div class="accordion-img mr-4">
-                      <img src="assets/img/why_choose_b.jpg" alt="Image" class="img-fluid">
+                      <img src="asset/img/why_choose_b.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div style="margin-left:10px;">
                       <p>Our teachers and staff are the heart of our community. Their dedication, passion, and commitment to excellence create a supportive and inspiring environment where students thrive.</p>
@@ -301,7 +301,7 @@
                 <div class="accordion-body">
                   <div class="d-flex">
                     <div class="accordion-img mr-4">
-                      <img src="assets/img/why_choose_c.jpg" alt="Image" class="img-fluid">
+                      <img src="asset/img/why_choose_c.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div style="margin-left:10px;">
                       <p>At the core of everything we do is a deep respect for our customers. We are committed to providing exceptional service, listening to your needs, and delivering solutions that exceed expectations.</p>
@@ -319,7 +319,7 @@
                 <div class="accordion-body">
                   <div class="d-flex">
                     <div class="accordion-img mr-4">
-                      <img src="assets/img/why_choose_d.jpg" alt="Image" class="img-fluid">
+                      <img src="asset/img/why_choose_d.jpg" alt="Image" class="img-fluid">
                     </div>
                     <div style="margin-left:10px;">
                       <p >We take pride in delivering high-quality projects that meet the highest standards of excellence. Each project is carefully planned, executed, and tested to ensure it not only meets but exceeds expectations.</p>
@@ -338,15 +338,15 @@
     </div>
   </div> <!-- /.untree_co-section -->
 
-    <script src="assets/about-us/js/jquery-3.4.1.min.js"></script>
-    <script src="assets/about-us/js/popper.min.js"></script>
-    <script src="assets/about-us/js/bootstrap.min.js"></script>
-    <script src="assets/about-us/js/owl.carousel.min.js"></script>
-    <script src="assets/about-us/js/jquery.animateNumber.min.js"></script>
-    <script src="assets/about-us/js/jquery.waypoints.min.js"></script>
-    <script src="assets/about-us/js/jquery.fancybox.min.js"></script>
-    <script src="assets/about-us/js/jquery.sticky.js"></script>
-    <script src="assets/about-us/js/aos.js"></script>
-    <script src="assets/about-us/js/custom.js"></script>
+    <script src="asset/about-us/js/jquery-3.4.1.min.js"></script>
+    <script src="asset/about-us/js/popper.min.js"></script>
+    <script src="asset/about-us/js/bootstrap.min.js"></script>
+    <script src="asset/about-us/js/owl.carousel.min.js"></script>
+    <script src="asset/about-us/js/jquery.animateNumber.min.js"></script>
+    <script src="asset/about-us/js/jquery.waypoints.min.js"></script>
+    <script src="asset/about-us/js/jquery.fancybox.min.js"></script>
+    <script src="asset/about-us/js/jquery.sticky.js"></script>
+    <script src="asset/about-us/js/aos.js"></script>
+    <script src="asset/about-us/js/custom.js"></script>
 
     @endsection
