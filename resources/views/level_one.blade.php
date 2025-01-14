@@ -28,7 +28,7 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="assets/img/courses_a.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="asset/img/courses_a.jpg" alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
@@ -71,7 +71,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="course-item">
-                <img src="assets/img/course-1.jpg" class="img-fluid" alt="...">
+                <img src="asset/img/course-1.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <p class="category">Cinematography Basics</p>
@@ -82,7 +82,7 @@
                 <p class="description">Explore the art of visual storytelling through camera work, lighting techniques, and shot composition to enhance your filmmaking skills.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-1-2.jpg" class="img-fluid" alt="">
+                    <img src="asset/img/trainers/trainer-1-2.jpg" class="img-fluid" alt="">
                     <a href="" class="trainer-link">Antonio</a>
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
@@ -97,7 +97,7 @@
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="course-item">
-                <img src="assets/img/course-2.jpg" class="img-fluid" alt="...">
+                <img src="asset/img/course-2.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <p class="category">Marketing</p>
@@ -108,7 +108,7 @@
                 <p class="description">Understand the fundamentals of video editing using software like Adobe Premiere Pro or Final Cut. Learn to cut, transition, and color-grade your footage.</p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-2-2.jpg" class="img-fluid" alt="">
+                    <img src="asset/img/trainers/trainer-2-2.jpg" class="img-fluid" alt="">
                     <a href="" class="trainer-link">Lana</a>
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
@@ -123,7 +123,7 @@
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
             <div class="course-item">
-                <img src="assets/img/course-3.jpg" class="img-fluid" alt="...">
+                <img src="asset/img/course-3.jpg" class="img-fluid" alt="...">
                 <div class="course-content">
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <p class="category">Marketing</p>
@@ -135,7 +135,7 @@
                 </p>
                 <div class="trainer d-flex justify-content-between align-items-center">
                     <div class="trainer-profile d-flex align-items-center">
-                    <img src="assets/img/trainers/trainer-3-2.jpg" class="img-fluid" alt="">
+                    <img src="asset/img/trainers/trainer-3-2.jpg" class="img-fluid" alt="">
                     <a href="" class="trainer-link">Brandon</a>
                     </div>
                     <div class="trainer-rank d-flex align-items-center">
