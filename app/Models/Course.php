@@ -27,7 +27,7 @@ class Course extends Model
             $latestCourse = self::latest('id')->first();
             $nextNumber = $latestCourse ? ((int) substr($latestCourse->course_id, -4)) + 1 : 1;
 
-            $course->course_id = 'RCA-C-' . str_pad($nextNumber, 4, '0', STR_PAD_LEFT);
+            $course->course_id = 'RCA-' . str_pad($nextNumber, 4, '0', STR_PAD_LEFT);
         });
     }
 }
