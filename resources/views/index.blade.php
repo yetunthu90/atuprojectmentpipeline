@@ -16,7 +16,7 @@
                                 <h1 class="display-3 text-white animated slideInDown">ReelCraft Academy—Where Creativity Thrives</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Craft your vision with cutting-edge technology, collaborative spaces, and the guidance of seasoned industry professionals.</p>
                                 <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="{{ route('join_now') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                                 <h1 class="display-3 text-white animated slideInDown">Dive Into the Magic of 3D Animation – Moving Castle Creations</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Join our December workshop to learn the art of animation and create your own moving masterpiece.</p>
                                 <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="{{ route('join_now') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                                 <h1 class="display-3 text-white animated slideInDown">Choose Your Movie-Making Journey</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Browse through our range of specialized courses and book your spot today!</p>
                                 <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
+                                <a href="{{ route('join_now') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>

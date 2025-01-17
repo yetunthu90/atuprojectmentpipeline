@@ -4,6 +4,24 @@
 
 
 @section('content') <!-- Define the content section -->
+<!-- Header Start -->
+<div class="container-fluid bg-primary py-5 mb-5 page-header-join_now">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 text-center">
+                    <h1 class="display-3 text-white animated slideInDown">Begin Your Journey</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Join Now</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
  <!-- Contact Start -->
  <div class="container-xxl py-5">
         <div class="container">
@@ -43,7 +61,10 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <select class="form-select custom-select" id="course" name="course" required>
-                                    </select>
+                                    <option value="" disabled selected>Select a course</option>
+                                        @foreach($courses as $course)
+                                            <option value="{{ $course->id }}">{{ $course->course_name }}</option>
+                                        @endforeach
                                     </select>
                                     <label for="course">Course</label>
                                 </div>
