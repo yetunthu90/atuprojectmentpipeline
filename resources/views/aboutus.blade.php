@@ -177,8 +177,8 @@
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
-        <h1 class="mb-5 mt-5">School News</h1>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+        <h1 class="mb-5 mt-5">Movie School News</h1>
+          <p>Variety of courses are designed for filmmakers to understand the craft of acting, enabling better direction and communication with actors during film production.</p>
         </div>
       </div>
       <div class="row align-items-stretch">
@@ -188,9 +188,9 @@
               <img src="asset/img/about_one.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
-              <h2 class="mb-3"><a href="#">Education for Tomorrow's Leaders</a></h2>
-              <div class="meta mb-2"><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Admin</div>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <h2 class="mb-3"><a href="#">Film Appreciation and Analysis</a></h2>
+              <div class="meta mb-2"><span class="icon-calendar mr-2"></span><span>Jan 22, 2025</span>  <span class="icon-person mr-2"></span>Admin</div>
+              <p>Develop a deeper understanding of cinematic techniques, genres, and iconic films by analyzing them critically.</p>
             </div>
           </div>
         </div>
@@ -200,9 +200,9 @@
               <img src="asset/img/about_two.jpg" alt="Image">
             </figure>
             <div class="media-h-body">
-              <h2 class="mb-3"><a href="#">Enroll Your Kids This Summer to get 30% off</a></h2>
+              <h2 class="mb-3"><a href="#">Visual Effects (VFX) for Beginners</a></h2>
               <div class="meta mb-2"><span class="icon-calendar mr-2"></span><span>June 22, 2020</span>  <span class="icon-person mr-2"></span>Admin</div>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+              <p>An introduction to adding special effects to your films using tools like After Effects or Blender, enhancing your storytelling.</p>
             </div>
           </div>
         </div>
