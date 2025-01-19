@@ -77,8 +77,13 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="special_request " placeholder="nice-to-have" name="phone_number"  required>
-                                    <label for="special_request">Special Requests</label>
+                                <select class="form-select custom-select" id="course" name="nice_to_have[]" required>
+                                    <option value="">Select your option</option>
+                                    <option value="flexible_schedule">Flexible Schedule</option>
+                                    <option value="advanced_topics">Access to Advanced Topics</option>
+                                    <option value="recorded_sessions">Recorded Sessions</option>
+                                    </select>
+                                    <label for="nice_to_have">Nice To Have</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
