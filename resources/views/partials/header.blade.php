@@ -10,17 +10,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('index') }}" class="nav-item nav-link active">Home</a>
+                <a href="{{ route('index') }}" class="nav-item nav-link">Home</a>
                 <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Courses</a>
+                    <a href="#" class=" nav-item nav-link dropdown-toggle" data-bs-toggle="dropdown">Courses</a>
                     <div class="dropdown-menu fade-down m-0">
                         <a href="{{ route('level_one') }}" class="dropdown-item">Level 1</a>
                     </div>
                 </div>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
+                <a href="{{ route('index') }}" class="nav-item nav-link">Sign In</a>
+                <a href="{{ route('about') }}" class="nav-item nav-link">Sign Up</a>
             </div>
-            <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+            <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
     </nav>
     <!-- Navbar End -->
