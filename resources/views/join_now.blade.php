@@ -88,10 +88,11 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select" id="course" name="course" required>
-                                        <option value="course1">Payment Method</option>
-                                        <option value="course2">Course 2</option>
-                                        <option value="course3">Course 3</option>
+                                    <select class="form-select" id="payment_method" name="payment_method" required>
+                                    <option value="" disabled selected>Select a payment type</option>
+                                        @foreach($payments as $payment)
+                                            <option value="{{ $payment->id }}">{{ $payment->payment_method }}</option>
+                                        @endforeach
                                     </select>
                                     <label for="course">Payment Method</label>
                                 </div>
