@@ -84,6 +84,7 @@
                                     <option value="recorded_sessions">Recorded Sessions</option>
                                     </select>
                                     <label for="nice_to_have">Nice To Have</label>
+                                </select>
                                 </div>
                             </div>
                             <div class="col-md-6">

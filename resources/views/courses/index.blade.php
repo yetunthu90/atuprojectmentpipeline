@@ -62,12 +62,12 @@
                                 <tbody>
                                 @foreach($courses as $course)
                                     <tr>
-                                       <td>{{ $course->id }}</td>
+                                       <td>{{ $loop->iteration }}</td>
                                         <td>{{ $course->course_id }}</td>
                                         <td>{{ $course->course_name }}</td>
                                         <td>{{ $course->duration }} days</td>
                                         <td>{{ $course->capacity }}</td>
-                                        <td>{{ $course->price }}</td>#
+                                        <td>{{ $course->price }}</td>
                                         <td>
                                               <!-- Edit Button -->
                                                 <a href="{{ route('courses.edit', $course->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
