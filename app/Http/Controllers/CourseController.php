@@ -80,4 +80,10 @@ class CourseController extends Controller
         return view('courses.show', compact('course'));
     }
 
+    public function courselist()
+    {
+       
+        return 'hiii';
+    }
+
 }

@@ -175,12 +175,12 @@ sup {
 }
 
 a {
-  color: #007bff;
+  color: #06BBCC;
   text-decoration: none;
   background-color: transparent;
 }
 a:hover {
-  color: #0056b3;
+  color: #06BBCC;
   text-decoration: underline;
 }
 
@@ -3648,7 +3648,7 @@ input[type=button].btn-block {
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
 .custom-select:focus::-ms-value {
-  color: #495057;
+  color: #06BBCC;
   background-color: #fff;
 }
 .custom-select[multiple], .custom-select[size]:not([size="1"]) {
@@ -3657,7 +3657,7 @@ input[type=button].btn-block {
   background-image: none;
 }
 .custom-select:disabled {
-  color: #6c757d;
+  color: #06BBCC;
   background-color: #e9ecef;
 }
 .custom-select::-ms-expand {
@@ -3665,7 +3665,7 @@ input[type=button].btn-block {
 }
 .custom-select:-moz-focusring {
   color: transparent;
-  text-shadow: 0 0 0 #495057;
+  text-shadow: 0 0 0 #06BBCC;
 }
 
 .custom-select-sm {

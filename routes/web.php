@@ -5,6 +5,9 @@ use App\Http\Controllers\MessageController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\JoinnowController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\auth\AuthController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\auth\PasswordResetMail;
 
 Route::get('/', function () {
     return view('index');
@@ -26,7 +29,7 @@ Route::get('/join_now', function () {
     return view('join_now');
 })->name('join_now');
 
-#courses
+//course management//
 Route::get('/courses', [CourseController::class, 'index'])->name('courses');
 Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
 Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
@@ -34,8 +37,27 @@ Route::get('/courses/{id}', [CourseController::class, 'show'])->name('courses.sh
 Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('courses.edit');
 Route::post('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
+Route::delete('/courses/listing', [CourseController::class, 'courselist']);
 
 Route::get('/join_now', [JoinnowController::class, 'index'])->name('join_now');
+//user management //
+Route::get('/login', [AuthController::class, 'index'])->name('login');
+Route::post('save-register', [AuthController::class, 'register'])->name('save.register');
+Route::get('/register', [AuthController::class, 'index'])->name('registeration');
+Route::get('/auth/login', [AuthController::class, 'login'])->name('login');
+Route::POST('/do-login', [AuthController::class, 'dologin'])->name('do.login');
+Route::get('/auth/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
+Route::POST('/do-forgot-password', [AuthController::class, 'doForgotPassword'])->name('do.forgot.password');
+Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset.password');
+
+//user management//
+Route::get('/users', [UserController::class, 'index'])->name('users');
+Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
+Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
+Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
+Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
+Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 #payments
 Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
