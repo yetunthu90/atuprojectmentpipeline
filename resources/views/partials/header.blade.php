@@ -20,7 +20,7 @@
                 </div>
                 <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>
                 <a href="{{ route('login') }}" class="nav-item nav-link">Sign In</a>
-                <a href="{{ route('join_now') }}" class="nav-item nav-link">Sign Up</a>
+                <a href="{{ route('join_now') }}" class="nav-item nav-link">Enquiry</a>
             </div>
             <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>

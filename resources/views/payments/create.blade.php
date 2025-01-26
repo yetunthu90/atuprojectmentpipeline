@@ -34,7 +34,7 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group">
                                                                         <label class="small mb-1" for="payment_method">Payment Method Name</label>
-                                                                        <input class="form-control py-4" id="payment_method" type="text" name="payment_method" placeholder="Enter Course Name"  required/>
+                                                                        <input class="form-control py-4" id="payment_method" type="text" name="payment_method" placeholder="Enter Payment Method"  required/>
                                                                                 @error('payment_method') 
                                                                                     <div class="text-danger">{{ $message }}</div>
                                                                                 @enderror
