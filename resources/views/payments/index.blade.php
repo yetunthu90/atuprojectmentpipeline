@@ -41,7 +41,7 @@
                         <div class="col-3 text-right">
                             <a href="{{ route('payments.create') }}" class="btn btn-primary">
                                 <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                                <span> New Payment Method</span>
+                                <span>Payment Method</span>
                             </a>
                         </div>
                     </div>
