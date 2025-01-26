@@ -8,6 +8,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\auth\PasswordResetMail;
+use App\Http\Controllers\CustomerRequestController;
 
 Route::get('/', function () {
     return view('index');
@@ -29,7 +30,7 @@ Route::get('/join_now', function () {
     return view('join_now');
 })->name('join_now');
 
-//course management//
+#course management
 Route::get('/courses', [CourseController::class, 'index'])->name('courses');
 Route::get('/courses/create', [CourseController::class, 'create'])->name('courses.create');
 Route::post('/courses/store', [CourseController::class, 'store'])->name('courses.store');
@@ -38,9 +39,9 @@ Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('cours
 Route::post('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::delete('/courses/listing', [CourseController::class, 'courselist']);
-
 Route::get('/join_now', [JoinnowController::class, 'index'])->name('join_now');
-//user management //
+
+#user login
 Route::get('/login', [AuthController::class, 'index'])->name('login');
 Route::post('save-register', [AuthController::class, 'register'])->name('save.register');
 Route::get('/register', [AuthController::class, 'index'])->name('registeration');
@@ -50,7 +51,7 @@ Route::get('/auth/forgot-password', [AuthController::class, 'forgotPassword'])->
 Route::POST('/do-forgot-password', [AuthController::class, 'doForgotPassword'])->name('do.forgot.password');
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset.password');
 
-//user management//
+#user management
 Route::get('/users', [UserController::class, 'index'])->name('users');
 Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
 Route::post('/users/store', [UserController::class, 'store'])->name('users.store');
@@ -68,4 +69,5 @@ Route::get('/payments/{id}/edit', [PaymentController::class, 'edit'])->name('pay
 Route::post('/payments/{id}', [PaymentController::class, 'update'])->name('payments.update');
 Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments.destroy');
 
-
+#customer request
+Route::post('/form-submit', [CustomerRequestController::class, 'store'])->name('form.submit');
