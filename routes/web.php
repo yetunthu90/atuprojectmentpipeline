@@ -39,7 +39,11 @@ Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('cours
 Route::post('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::delete('/courses/listing', [CourseController::class, 'courselist']);
+
+#enquiry management
 Route::get('/join_now', [JoinnowController::class, 'index'])->name('join_now');
+Route::get('/enquiry', [JoinnowController::class, 'enquiry_list'])->name('enquiry');
+
 
 #user login
 Route::get('/login', [AuthController::class, 'index'])->name('login');

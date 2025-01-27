@@ -18,7 +18,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ url('courses') }}">Course Module</a>
                     </nav>
-                </div> 
+                </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts-one" aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     PaymentManagement
@@ -39,9 +39,19 @@
                         <a class="nav-link" href="{{ url('users') }}">Users Module</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts-three" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fa fa-question"></i></div>
+                    EnquiryManagement
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayouts-three" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ url('enquiry') }}">Enquiry Module</a>
+                    </nav>
+                </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fa fa-lock"></i></div>
-                    User Crentional 
+                    User Crentional
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
@@ -58,7 +68,7 @@
                             </nav>
                         </div>
                     </nav>
-                </div>               
+                </div>
             </div>
         </div>
         <div class="sb-sidenav-footer">
