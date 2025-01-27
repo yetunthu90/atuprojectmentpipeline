@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  labels:
+    app: db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: db
+  template:
+    metadata:
+      labels:
+        app: db
+    spec:
+      containers:
+      - name: mysql
+        image: ye1234/mysqldb:latest
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: "HelloDublin"
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - mountPath: /var/lib/mysql
+          name: dbdata
+      volumes:
+        - name: dbdata
+          persistentVolumeClaim:
+            claimName: dbdata
+
+
