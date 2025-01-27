@@ -1,7 +1,7 @@
 
 services:
     
-    # Application
+    # Backend Application
     app:
         build:
             context: .
@@ -25,7 +25,9 @@ services:
             - 80:80
     # Database
     database:
-        image: mysql:8.0
+        build:
+            context: .
+            dockerfile: db.dockerfile
         volumes:
             - dbdata:/var/lib/mysql
         environment:
@@ -35,9 +37,11 @@ services:
             MYSQL_USER: ${DB_USERNAME}
         ports:
             - 33061:3306
-    # Database management
+    # Database management Panel
     pma:
-        image: phpmyadmin:5.1
+        build:
+            context: .
+            dockerfile: phpmyadmin.dockerfile
         environment:
             - PMA_ARBITRARY=1
             - PMA_HOST=${DB_HOST}
