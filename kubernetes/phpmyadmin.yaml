@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: phpmyadmin
+  name: phpmyadmin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: phpmyadmin
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: phpmyadmin
+    spec:
+      containers:
+      - image: ye1234/phpmyadmin:latest
+        name: phpmyadmin
+        resources: {}
+status: {}
