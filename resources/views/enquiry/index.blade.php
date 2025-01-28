@@ -36,14 +36,9 @@
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                            <i class="fas fa-table mr-1"></i>Enquiry Details
+                            <i class="fa fa-question-circle mr-2"></i>Enquiry Details
                         </div>
-                        <div class="col-3 text-right">
-                            <a href="" class="btn btn-primary">
-                                <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                                <span>Add New Course</span>
-                            </a>
-                        </div>
+
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -61,15 +56,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($customerrequest as $customer_request)
+                                @foreach($customerRequests as $customer_request)
                                     <tr>
                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $customer_request->name}}</td>
                                         <td>{{ $customer_request->email}}</td>
                                         <td>{{ $customer_request->phone_number}}</td>
-                                        <td>{{ $customer_request->course_name }}</td>
-                                        <td>{{ $customer_request->start_date }}</td>
-                                        <td>{{ $customer_request->payment_method_id }}</td>
+                                        <td>{{ $customer_request->course->course_name ?? 'N/A' }}</td>
+                                        <td>{{ $customer_request->start_date}}</td>
+                                        <td>{{ $customer_request->payment->payment_method ?? 'N/A' }}</td>
                                         <td>
                                               <!-- Edit Button -->
                                                 <a href="" class="btn btn-sm" style="display:inline-block; padding: 0;">

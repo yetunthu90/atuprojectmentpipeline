@@ -11,12 +11,8 @@ class JoinnowController extends Controller
 {
     public function enquiry_list()
     {
-       // Fetch all courses
-        $customerrequest = CustomerRequest::all();
-
-        // Pass data to the index view
-        return view('enquiry.index', compact('customerrequest'));
-        // return view('courses.index');
+        $customerRequests = CustomerRequest::with(['course', 'payment'])->get();
+        return view('enquiry.index', compact('customerRequests'));
     }
 
     public function index()
