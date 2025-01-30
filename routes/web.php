@@ -9,6 +9,8 @@ use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\auth\PasswordResetMail;
 use App\Http\Controllers\CustomerRequestController;
+use App\Http\Controllers\DashboardController;
+
 
 Route::get('/', function () {
     return view('index');
@@ -75,3 +77,9 @@ Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('pa
 
 #customer request
 Route::post('/form-submit', [CustomerRequestController::class, 'store'])->name('form.submit');
+
+#Total counts
+//Route::get('/dashboard', [PaymentController::class, 'dashboard'])->name('dashboard');
+
+//Dashboard count function
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');

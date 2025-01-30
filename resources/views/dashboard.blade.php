@@ -8,36 +8,36 @@
                         <div class="row">
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">10</div>
+                                    <div class="card-body">{{ $totalCourses }}</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link">Total bookings</a>
+                                        <a class="small text-white stretched-link">Total Courses</a>
                                         <div class="small text-white"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">30</div>
+                                    <div class="card-body">{{ $totalUsers }}</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link">Popular courses.</a>
+                                        <a class="small text-white stretched-link">Total Users</a>
                                         <div class="small text-white"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">100</div>
+                                    <div class="card-body">{{ $totalEnquiries  }}</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link">Total Students</a>
+                                        <a class="small text-white stretched-link">Total Enquiries</a>
                                         <div class="small text-white"></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-xl-3 col-md-6">
                                 <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">50000</div>
+                                    <div class="card-body">{{ $totalPayments }}</div>
                                     <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link">Revenue stats</a>
+                                        <a class="small text-white stretched-link">Total Payment Methods</a>
                                         <div class="small text-white"></div>
                                     </div>
                                 </div>
