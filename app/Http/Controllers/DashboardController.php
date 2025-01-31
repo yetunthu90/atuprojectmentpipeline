@@ -15,19 +15,21 @@ class DashboardController extends Controller
     {
         // Count total payment methods
         $totalPayments = Payment::count();
-        
+
         // Count total courses
         $totalCourses = Course::count();
-        
+
         // Count total users
         $totalUsers = User::count();
-        
+
         // Count total enquiries
         $totalEnquiries = CustomerRequest::count();
 
+        $Customer_request = CustomerRequest::all();
+
         // Pass data to the dashboard view
-        return view('dashboard', compact('totalPayments', 'totalCourses', 'totalUsers', 'totalEnquiries'));
-       
+        return view('dashboard', compact('totalPayments', 'totalCourses', 'totalUsers', 'totalEnquiries' , 'Customer_request'));
+
     }
 
 }
