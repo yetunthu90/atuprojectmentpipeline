@@ -47,48 +47,28 @@
                             <div class="card-header"><i class="fas fa-table mr-1"></i>Student  Details</div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Id</th>
-                                                <th>Name</th>
-                                                <th>Course</th>
-                                                <th>Cont Number</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>Tiger Nixon</td>
-                                                <td>System Architect</td>
-                                                <td>Edinburgh</td>
-                                                <td>61</td>
-                                                <td>2011/04/25</td>
-                                                <td>$320,800</td>
-                                            </tr>                                          
-                                            <tr>
-                                                <td>2</td>
-                                                <td>Michael Bruce</td>
-                                                <td>Javascript Developer</td>
-                                                <td>Singapore</td>
-                                                <td>29</td>
-                                                <td>2011/06/27</td>
-                                                <td>$183,000</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3</td>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td>$112,000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        <th>Id</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone Number</th>
+                                        <th>Course</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($Customer_request as $customer_request)
+                                    <tr>
+                                       <td>{{ $loop->iteration }}</td>
+                                        <td>{{ $customer_request->name}}</td>
+                                        <td>{{ $customer_request->email}}</td>
+                                        <td>{{ $customer_request->phone_number}}</td>
+                                        <td>{{ $customer_request->course->course_name ?? 'N/A' }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                                 </div>
                             </div>
                         </div>
