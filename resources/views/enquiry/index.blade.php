@@ -82,7 +82,7 @@
 
                                                 <!-- Show Button -->
                                                 <a href="" class="btn btn-sm" style="display:inline-block; padding: 0;">
-                                                    <i class="fas fa-sync-alt"></i>
+                                                    <i class="fa fa-eye"></i>
                                                 </a>
                                         </td>
                                     </tr>

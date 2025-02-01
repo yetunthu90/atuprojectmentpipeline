@@ -62,9 +62,8 @@
                         </a>
                         <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ url('login') }}">Login</a>
-                                <a class="nav-link" href="{{ url('register') }}">Register</a>
-                                <a class="nav-link" href="{{ url('password') }}">Forgot Password</a>
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                                <a class="nav-link" href="{{ route('registeration') }}">Register</a>
                             </nav>
                         </div>
                     </nav>
