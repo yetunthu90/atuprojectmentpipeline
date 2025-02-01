@@ -8,9 +8,7 @@ use App\Models\CustomerRequest;
 class CustomerRequestController extends Controller
 {
     public function store(Request $request)
-    {
-        
-
+    {       
         // Validate the request
 
         $validatedData = $request->validate([
