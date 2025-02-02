@@ -67,21 +67,21 @@
                                         <td>{{ $customer_request->payment->payment_method ?? 'N/A' }}</td>
                                         <td>
                                               <!-- Edit Button -->
-                                                <a href="" class="btn btn-sm" style="display:inline-block; padding: 0;">
+                                                <a href="{{ route('enquiry.edit', $customer_request->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
 
                                                 <!-- Delete Button (with confirmation) -->
-                                                <form action="" method="POST" onsubmit="return confirm('Are you sure you want to delete this course?');">
+                                                <form action="{{ route('enquiry.destroy', $customer_request->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this course?');">
                                                     @csrf
-                                                    @method('DELETE') <!-- Spoof the DELETE method -->
+                                                    @method('DELETE') <!-- Method spoofing for DELETE -->
                                                     <button type="submit" class="btn btn-sm" style="background: none; border: none; padding: 0;">
                                                     <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
 
                                                 <!-- Show Button -->
-                                                <a href="" class="btn btn-sm" style="display:inline-block; padding: 0;">
+                                                <a href="{{ route('enquiry.show', $customer_request->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
                                                     <i class="fa fa-eye"></i>
                                                 </a>
                                         </td>

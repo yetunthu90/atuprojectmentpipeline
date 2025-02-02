@@ -21,9 +21,6 @@ class CustomerRequestController extends Controller
             'payment_method_id' => 'required|exists:payments,id',
             'message' => 'required|string',
         ]);
-
-        //dd($validatedData);
-
         // Store data in the database
         CustomerRequest::create([
             'name' => $validatedData['name'],

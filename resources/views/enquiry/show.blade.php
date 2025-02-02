@@ -3,21 +3,16 @@
 @section('content')
     <main>
     <div class="container-fluid">
-            <h1 class="mt-4">Course Module</h1>
+            <h1 class="mt-4">Enquiry Module</h1>
             <main>
                 <div class="card mb-4">
-                    <!-- <div class="card-header"><i class="fas fa-table mr-1"></i>Course  Details
-                    <div class="col-4">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
-                            </div>
-                    </div> -->
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                        <i class="fa fa-eye mr-2" aria-hidden="true"></i>Course Details
+                        <i class="fa fa-eye mr-2" aria-hidden="true"></i>Enquiry Details
                         </div>
                          <!-- Back Button -->
                         <div>
-                            <a href="{{ route('courses') }}" class="btn btn-primary">
+                            <a href="{{ route('enquiry') }}" class="btn btn-primary">
                                 <i class="fa fa-arrow-left mr-1"></i> Back
                             </a>
                         </div>
@@ -33,44 +28,50 @@
                                                             <div class="form-row">
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="course_name">Course Name</label>
-                                                                        <p class="form-control" id="course_name">{{ $course->course_name }}</p>
+                                                                        <label class="small mb-1 font-weight-bold" for="name">Name</label>
+                                                                        <p class="form-control" id="name">{{ $CustomerRequest->name }}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="duration">Duration</label>
-                                                                        <p class="form-control" id="duration">{{ $course->duration }}</p>
+                                                                        <label class="small mb-1 font-weight-bold" for="email">Email</label>
+                                                                        <p class="form-control" id="email">{{ $CustomerRequest->email }}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group border rounded p-3">
+                                                                        <label class="small mb-1 font-weight-bold" for="phone_number">Phone Number</label>
+                                                                        <p class="form-control" id="phone_number">{{ $CustomerRequest->phone_number }}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group border rounded p-3">
+                                                                        <label class="small mb-1 font-weight-bold" for="course_id">Course</label>
+                                                                        <p class="form-control" id="course_id">{{ $CustomerRequest->course->course_name }}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
                                                                         <label class="small mb-1 font-weight-bold" for="start_date">Start Date</label>
-                                                                        <p class="form-control" id="start_date">{{ $course->start_date }}</p>
+                                                                        <p class="form-control" id="start_date">{{ $CustomerRequest->start_date }}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="end_date">End Date</label>
-                                                                        <p class="form-control" id="end_date">{{ $course->end_date }}</p>
+                                                                        <label class="small mb-1 font-weight-bold" for="nice_to_have">Nice to have</label>
+                                                                        <p class="form-control" id="nice_to_have">{{ $CustomerRequest->nice_to_have }}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="capacity">Capacity</label>
-                                                                        <p class="form-control" id="capacity">{{ $course->capacity }}</p>
+                                                                        <label class="small mb-1 font-weight-bold" for="payment_method_id">Payment Method</label>
+                                                                        <textarea class="form-control" id="payment_method_id" rows="4">{{ $CustomerRequest->payment->payment_method}}</textarea>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="price">Price</label>
-                                                                        <p class="form-control" id="price">{{ $course->price }}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-md-12">
-                                                                    <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="description">Description</label>
-                                                                        <textarea class="form-control" id="description" rows="4">{{ $course->description }}</textarea>
+                                                                        <label class="small mb-1 font-weight-bold" for="message">Message</label>
+                                                                        <textarea class="form-control" id="message" rows="4">{{ $CustomerRequest->message }}</textarea>
                                                                     </div>
                                                                 </div>
                                                             </div> 
