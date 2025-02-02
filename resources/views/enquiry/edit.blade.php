@@ -8,7 +8,7 @@
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                        <i class="fa fa-pencil mr-2" aria-hidden="true"></i>Edit Course Details
+                        <i class="fa fa-pencil mr-2" aria-hidden="true"></i>Edit Enquiry Details
                         </div>
                          <!-- Back Button -->
                         <div>
