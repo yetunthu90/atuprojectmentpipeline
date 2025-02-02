@@ -45,6 +45,12 @@ Route::delete('/courses/listing', [CourseController::class, 'courselist']);
 #enquiry management
 Route::get('/join_now', [JoinnowController::class, 'index'])->name('join_now');
 Route::get('/enquiry', [JoinnowController::class, 'enquiry_list'])->name('enquiry');
+Route::get('/enquiry/create', [JoinnowController::class, 'create'])->name('enquiry.create');
+Route::post('/enquiry/store', [JoinnowController::class, 'store'])->name('enquiry.store');
+Route::get('/enquiry/{id}', [JoinnowController::class, 'show'])->name('enquiry.show');
+Route::get('/enquiry/{id}/edit', [JoinnowController::class, 'edit'])->name('enquiry.edit');
+Route::post('/enquiry/{id}', [JoinnowController::class, 'update'])->name('enquiry.update');
+Route::delete('/enquiry/{id}', [JoinnowController::class, 'destroy'])->name('enquiry.destroy');
 
 
 #user login
