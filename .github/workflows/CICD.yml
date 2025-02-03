@@ -1,15 +1,38 @@
-name: Laravel CI/CD with Kubernetes
+name: Laravel CI/CD with Docker Compose
 
 on:
   push:
     branches:
       - main
-      - dev
+      - develop
 
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
 
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Start Docker Compose Services
+        run: |
+          docker compose up -d --build
+
+      - name: Run Migrations
+        run: docker compose exec app php artisan migrate --force
+
+      - name: Run Tests
+        run: docker compose exec app php artisan test
+
+      - name: Stop and Remove Containers
+        run: docker compose down
+
+  push-to-docker-hub:
+    needs: build-and-test
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -20,51 +43,40 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Tag and Push App Image
+      - name: Push App Image
         run: |
+          # Tag and push the App image
           docker tag group_1_studio_ghibli_movie_maker-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app
 
-      - name: Tag and Push Web Image
-        run: |
+          # Tag and push the Web image
           docker tag group_1_studio_ghibli_movie_maker-web ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web
 
-      - name: Tag and Push phpMyAdmin Image
-        run: |
-          docker tag group_1_studio_ghibli_movie_maker-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
-
-      - name: Tag and Push Database Image
-        run: |
+          # Tag and push the Database image
           docker tag group_1_studio_ghibli_movie_maker-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb
 
-      - name: Run Tests in Docker
-        run: |
-          docker compose up -d --build
-          docker compose exec app php artisan test
-          docker compose down
+          # Tag and push the phpMyAdmin image
+          docker tag group_1_studio_ghibli_movie_maker-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
 
-#  deploy:
-#    needs: build-and-test
-#    runs-on: ubuntu-latest
-#    if: github.ref == 'refs/heads/main'
+  #deploy:
+   # needs: push-to-docker-hub
+    #runs-on: ubuntu-latest
+    #if: github.ref == 'refs/heads/main'
 
-#    steps:
-#     - name: Checkout Repository
- #       uses: actions/checkout@v3
+    #steps:
+     # - name: Checkout Repository
+      #  uses: actions/checkout@v3
 
-  #    - name: Set up Kubernetes CLI
-   #     uses: azure/setup-kubectl@v3
+      #- name: Set up Kubernetes CLI
+      #  uses: azure/setup-kubectl@v3
 
-    #  - name: Configure Kubeconfig
-     #   run: echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+      #- name: Configure Kubeconfig
+       # run: echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
 
-   #   - name: Deploy to Kubernetes
-   #     run: |
-    #      kubectl apply -f k8s/
-    #      kubectl rollout restart deployment laravel-app
-    #      kubectl rollout restart deployment laravel-web
-     #     kubectl rollout restart deployment phpmyadmin
-     #     kubectl rollout restart deployment mysqldb
+      #- name: Deploy to Kubernetes
+       # run: |
+        #  kubectl apply -f k8s/
+         # kubectl rollout restart deployment laravel-app
