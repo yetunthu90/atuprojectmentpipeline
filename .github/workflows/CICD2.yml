@@ -7,7 +7,7 @@ on:
       - dev
 
 jobs:
-  build-and-test:
+  Build-Test-Pushed:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,6 @@ jobs:
           
       - name: Wait for all Containers to Be Ready
         run: sleep 20
-        
-
 
       - name: Install Dependencies
         run: docker compose exec app composer install
@@ -44,12 +42,6 @@ jobs:
       - name: Show Docker Compose Images
         run: docker compose images
 
-#  push-to-docker-hub:
-  #  needs: build-and-test
-  #  runs-on: ubuntu-latest
- #   steps:
-#      - name: Checkout Repository
-#        uses: actions/checkout@v3
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -73,7 +65,7 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
           
   #deploy:
-   # needs: push-to-docker-hub
+   # needs: Build-Test-Pushed
     #runs-on: ubuntu-latest
     #if: github.ref == 'refs/heads/main'
 
