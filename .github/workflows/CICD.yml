@@ -21,14 +21,17 @@ jobs:
         run: |
           docker compose up -d --build
           
+      - name: Install Composer Dependencies
+        run: docker compose exec atuprojectmentpipeline-app-1 composer install --no-interaction
+          
       - name: Key  generations
-        run: docker compose exec app php artisan key:generate
+        run: docker compose exec atuprojectmentpipeline-app-1 php artisan key:generate
         
       - name: Run Migrations
-        run: docker compose exec app php artisan migrate --force
+        run: docker compose exec atuprojectmentpipeline-app-1 php artisan migrate --force
         
       - name: Run Tests
-        run: docker compose exec app php artisan test
+        run: docker compose exec atuprojectmentpipeline-app-1 php artisan test
 
       - name: Stop and Remove Containers
         run: docker compose down
@@ -49,19 +52,19 @@ jobs:
       - name: Push App Image
         run: |
           # Tag and push the App image
-          docker tag group_1_studio_ghibli_movie_maker-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          docker tag atuprojectmentpipeline-app-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app
 
           # Tag and push the Web image
-          docker tag group_1_studio_ghibli_movie_maker-web ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          docker tag atuprojectmentpipeline-web-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web
 
           # Tag and push the Database image
-          docker tag group_1_studio_ghibli_movie_maker-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          docker tag atuprojectmentpipeline-database-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb
 
           # Tag and push the phpMyAdmin image
-          docker tag group_1_studio_ghibli_movie_maker-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+          docker tag atuprojectmentpipeline-pma-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
 
   #deploy:
