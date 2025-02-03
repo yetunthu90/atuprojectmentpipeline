@@ -22,7 +22,10 @@ jobs:
           docker compose up -d --build
           
       - name: Wait for Containers to Be Ready
-        run: sleep 45
+        run: sleep 20
+        
+      - name: Show Docker Compose Images
+        run: docker compose images
 
       - name: Install Dependencies
         run: docker compose exec app composer install
@@ -51,8 +54,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
-      - name: Show Docker Compose Images
-        run: docker compose images
 
      # - name: Push App Image
       #  run: |
