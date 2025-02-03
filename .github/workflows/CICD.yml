@@ -20,6 +20,9 @@ jobs:
       - name: Start Docker Compose Services
         run: |
           docker compose up -d --build
+          
+      - name: Install Composer Dependencies
+        run: docker compose exec app composer install --no-interaction
       
       - name: Key  generations
         run: docker compose exec app php artisan key:generate
