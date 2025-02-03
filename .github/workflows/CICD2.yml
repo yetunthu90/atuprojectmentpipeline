@@ -21,7 +21,7 @@ jobs:
         run: |
           docker compose up -d --build
           
-      - name: Wait for Containers to Be Ready
+      - name: Wait for all Containers to Be Ready
         run: sleep 20
         
       - name: Show Docker Compose Images
@@ -55,20 +55,21 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-     # - name: Push App Image
-      #  run: |
+      - name: Push App Image
+        run: |
           # Tag and push the App image
-       #   docker tag atuprojectmentpipeline-app-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
-        #  docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app
+          docker tag atuprojectmentpipeline-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app
           # Tag and push the Web image
-         # docker tag atuprojectmentpipeline-web-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
-         # docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web
+          docker tag atuprojectmentpipeline-web  ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web
           # Tag and push the Database image
-         # docker tag atuprojectmentpipeline-database-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
-         # docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb
+          docker tag atuprojectmentpipeline-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb
           # Tag and push the phpMyAdmin image
-         # docker tag atuprojectmentpipeline-pma-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
-         # docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
+          docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
+          
   #deploy:
    # needs: push-to-docker-hub
     #runs-on: ubuntu-latest
