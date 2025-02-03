@@ -24,8 +24,7 @@ jobs:
       - name: Wait for all Containers to Be Ready
         run: sleep 20
         
-      - name: Show Docker Compose Images
-        run: docker compose images
+
 
       - name: Install Dependencies
         run: docker compose exec app composer install
@@ -42,12 +41,15 @@ jobs:
       - name: Stop and Remove Containers
         run: docker compose down
 
-  push-to-docker-hub:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Show Docker Compose Images
+        run: docker compose images
+
+#  push-to-docker-hub:
+  #  needs: build-and-test
+  #  runs-on: ubuntu-latest
+ #   steps:
+#      - name: Checkout Repository
+#        uses: actions/checkout@v3
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
