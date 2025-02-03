@@ -28,11 +28,11 @@ jobs:
        #     sleep 5
        #   done
           
-      - name: Install Composer Dependencies
-        run: docker compose exec app composer install --no-interaction
+      #- name: Install Composer Dependencies
+       # run: docker compose exec app composer install --no-interaction
           
-      - name: Key  generations
-        run: docker compose exec app php artisan key:generate
+      #- name: Key  generations
+       # run: docker compose exec app php artisan key:generate
         
       - name: Run Migrations
         run: docker compose exec app php artisan migrate --force
