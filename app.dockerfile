@@ -5,6 +5,9 @@ RUN apt-get update && apt-get install -y  \
     libjpeg-dev \
     libpng-dev \
     libwebp-dev \
+    git \
+    unzip \
+    zip \
     --no-install-recommends \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo_mysql -j$(nproc) gd
