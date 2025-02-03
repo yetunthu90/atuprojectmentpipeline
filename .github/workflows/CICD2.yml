@@ -7,7 +7,7 @@ on:
       - dev
 
 jobs:
-  build-and-test:
+  Build-Test-Pushed:
     runs-on: ubuntu-latest
 
     steps:
@@ -21,11 +21,11 @@ jobs:
         run: |
           docker compose up -d --build
           
-      - name: Wait for Containers to Be Ready
-        run: sleep 45
+      - name: Wait for all Containers to Be Ready
+        run: sleep 20
 
       - name: Install Dependencies
-        run: docker compose exec app composer install --no-interaction --prefer-dist
+        run: docker compose exec app composer install
            
       - name: Key  generations
         run: docker compose exec app php artisan key:generate
@@ -39,12 +39,9 @@ jobs:
       - name: Stop and Remove Containers
         run: docker compose down
 
-  push-to-docker-hub:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - name: Show Docker Compose Images
+        run: docker compose images
+
 
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
@@ -55,19 +52,20 @@ jobs:
       - name: Push App Image
         run: |
           # Tag and push the App image
-          docker tag atuprojectmentpipeline-app-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          docker tag atuprojectmentpipeline-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app
           # Tag and push the Web image
-          docker tag atuprojectmentpipeline-web-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          docker tag atuprojectmentpipeline-web  ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web
           # Tag and push the Database image
-          docker tag atuprojectmentpipeline-database-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          docker tag atuprojectmentpipeline-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb
           # Tag and push the phpMyAdmin image
-          docker tag atuprojectmentpipeline-pma-1 ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+          docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
+          
   #deploy:
-   # needs: push-to-docker-hub
+   # needs: Build-Test-Pushed
     #runs-on: ubuntu-latest
     #if: github.ref == 'refs/heads/main'
 
