@@ -22,23 +22,23 @@ jobs:
 
       - name: Tag and Push App Image
         run: |
-          docker tag group_1_studio_ghibli_movie_maker-app ${{ secrets.DOCKER_USERNAME }}/laravel-app:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/laravel-app:latest
+          docker tag group_1_studio_ghibli_movie_maker-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
 
       - name: Tag and Push Web Image
         run: |
-          docker tag group_1_studio_ghibli_movie_maker-web ${{ secrets.DOCKER_USERNAME }}/laravel-web:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/laravel-web:latest
+          docker tag group_1_studio_ghibli_movie_maker-web ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
 
       - name: Tag and Push phpMyAdmin Image
         run: |
-          docker tag group_1_studio_ghibli_movie_maker-pma ${{ secrets.DOCKER_USERNAME }}/phpmyadmin:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/phpmyadmin:latest
+          docker tag group_1_studio_ghibli_movie_maker-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
 
       - name: Tag and Push Database Image
         run: |
-          docker tag group_1_studio_ghibli_movie_maker-database ${{ secrets.DOCKER_USERNAME }}/mysqldb:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/mysqldb:latest
+          docker tag group_1_studio_ghibli_movie_maker-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
 
       - name: Run Tests in Docker
         run: |
@@ -46,25 +46,25 @@ jobs:
           docker compose exec app php artisan test
           docker compose down
 
-  deploy:
-    needs: build-and-test
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+#  deploy:
+#    needs: build-and-test
+#    runs-on: ubuntu-latest
+#    if: github.ref == 'refs/heads/main'
 
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+#    steps:
+#     - name: Checkout Repository
+ #       uses: actions/checkout@v3
 
-      - name: Set up Kubernetes CLI
-        uses: azure/setup-kubectl@v3
+  #    - name: Set up Kubernetes CLI
+   #     uses: azure/setup-kubectl@v3
 
-      - name: Configure Kubeconfig
-        run: echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+    #  - name: Configure Kubeconfig
+     #   run: echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
 
-      - name: Deploy to Kubernetes
-        run: |
-          kubectl apply -f k8s/
-          kubectl rollout restart deployment laravel-app
-          kubectl rollout restart deployment laravel-web
-          kubectl rollout restart deployment phpmyadmin
-          kubectl rollout restart deployment mysqldb
+   #   - name: Deploy to Kubernetes
+   #     run: |
+    #      kubectl apply -f k8s/
+    #      kubectl rollout restart deployment laravel-app
+    #      kubectl rollout restart deployment laravel-web
+     #     kubectl rollout restart deployment phpmyadmin
+     #     kubectl rollout restart deployment mysqldb
