@@ -20,18 +20,25 @@ jobs:
       - name: Start Docker Compose Services
         run: |
           docker compose up -d --build
+      - name: Wait for Containers to Be Ready
+        run: |
+          # Check if the 'app' container is up and running
+          until docker compose ps | grep -q 'app.*running'; do
+            echo "Waiting for app container to be ready..."
+            sleep 5
+          done
           
       - name: Install Composer Dependencies
-        run: docker compose exec atuprojectmentpipeline-app-1 composer install --no-interaction
+        run: docker compose exec app composer install --no-interaction
           
       - name: Key  generations
-        run: docker compose exec atuprojectmentpipeline-app-1 php artisan key:generate
+        run: docker compose exec app php artisan key:generate
         
       - name: Run Migrations
-        run: docker compose exec atuprojectmentpipeline-app-1 php artisan migrate --force
+        run: docker compose exec app php artisan migrate --force
         
       - name: Run Tests
-        run: docker compose exec atuprojectmentpipeline-app-1 php artisan test
+        run: docker compose exec app php artisan test
 
       - name: Stop and Remove Containers
         run: docker compose down
