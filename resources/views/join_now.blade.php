@@ -37,7 +37,6 @@
                             </div>
                         @endif
                     <form method="POST" action="{{ route('form.submit') }}">
-                    @method('POST')
                     @csrf
                         <div class="row g-3">
                             <div class="col-md-6">
@@ -49,18 +48,24 @@
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="email" placeholder="Your Email" name="email"  required>
+                                        @error('email') 
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     <label for="email">Your Email</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="phone_number" placeholder="Your Phone Number" name="phone_number"  required>
+                                        @error('phone_number') 
+                                            <div class="text-danger">{{ $message }}</div>
+                                        @enderror
                                     <label for="phone_number">Phone Number</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select custom-select" id="course" name="course" required>
+                                    <select class="form-select custom-select" id="course_id" name="course_id" required>
                                     <option value="" disabled selected>Select a course</option>
                                         @foreach($courses as $course)
                                             <option value="{{ $course->id }}">{{ $course->course_name }}</option>
@@ -71,33 +76,28 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="date" class="form-control" id="phone_number" placeholder="Your Phone Number" name="phone_number"  required>
-                                    <label for="phone_number">Course Start Date</label>
+                                    <input type="date" class="form-control" id="start_date" placeholder="Select Course Start Date" name="start_date"  required>
+                                    <label for="start_date">Course Start Date</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="special_request " placeholder="nice-to-have" name="phone_number"  required>
-                                    <label for="special_request">Special Requests</label>
+                                    <input type="text" class="form-control" id="nice_to_have" placeholder="Nice To Have" name="nice_to_have"  required>
+                                    <label for="nice_to_have">Nice To Have</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <select class="form-select" id="course" name="course" required>
-                                        <option value="course1">Payment Method</option>
-                                        <option value="course2">Course 2</option>
-                                        <option value="course3">Course 3</option>
+                                    <select class="form-select" id="payment_method_id" name="payment_method_id" required>
+                                    <option value="" disabled selected>Select a payment type</option>
+                                        @foreach($payments as $payment)
+                                            <option value="{{ $payment->id }}">{{ $payment->payment_method }}</option>
+                                        @endforeach
                                     </select>
-                                    <label for="course">Payment Method</label>
+                                    <label for="payment_method_id">Payment Method</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-floating">
-                                    <input type="text" class="form-control" id="contact_method" placeholder="nice-to-have" name="phone_number"  required>
-                                    <label for="contact_method">Preferred Contact Method</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
+                            <div class="col-6">
                                 <div class="form-floating">
                                     <textarea class="form-control" placeholder="Leave a message here" id="message"  name="message" style="height: 150px" required></textarea>
                                     <label for="message">Message</label>

@@ -30,4 +30,8 @@ class Course extends Model
             $course->course_id = 'RCA-' . str_pad($nextNumber, 4, '0', STR_PAD_LEFT);
         });
     }
+    public function customerRequests()
+        {
+            return $this->hasMany(CustomerRequest::class, 'course_id');
+        }
 }

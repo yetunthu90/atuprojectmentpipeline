@@ -3,7 +3,7 @@
 @section('title', 'Contact Us Page') <!-- Define a title for this page -->
 
 @section('content') <!-- Define the content section -->
- 
+
 <!-- Header Start -->
 <div class="container-fluid bg-primary py-5 mb-5 page-header-level_one">
         <div class="container py-5">
@@ -28,32 +28,31 @@
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="img-fluid position-absolute w-100 h-100" src="asset/img/courses_a.jpg" alt="" style="object-fit: cover;">
+                        <img class="img-fluid position-absolute w-100 h-100" src="asset\img\level1.jpg" alt="" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Course Directory</h6>
-                    <h1 class="mb-4">Complete Course List</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <div class="row gy-2 gx-4 mb-4">
+                    <h1 class="mb-4">Explore Our Comprehensive Film and Media Courses</h1>
+                    <p class="mb-4">At Reelcraft Academy, we offer a diverse range of courses tailored to equip aspiring creators with the skills and knowledge needed to excel in the world of film and media. Our programs cover every stage of the creative process, from conceptualizing stories to mastering advanced post-production techniques. Whether you’re a beginner or an experienced professional looking to enhance your expertise, our courses are designed to suit all levels of learning.</p>
+                        <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa fa-plus-square text-primary me-2"></i>Skilled Instructors</p>
+                            <p class="mb-0"><i class="fa fa fa-plus-square text-primary me-2"></i>Animation</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa fa-plus-square text-primary me-2"></i>Online Classes</p>
+                            <p class="mb-0"><i class="fa fa fa-plus-square text-primary me-2"></i>Film Directing</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>Cinematography</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>Skilled Instructors</p>
+                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>Digital Content Creation</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>Online Classes</p>
+                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>Visual Effects (VFX)</p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>International Certificate</p>
+                            <p class="mb-0"><i class="fa fa-plus-square text-primary me-2"></i>Production Management</p>
                         </div>
                     </div>
                 </div>
@@ -70,30 +69,30 @@
         <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <div class="course-item">
-                <img src="asset/img/course-1.jpg" class="img-fluid" alt="...">
-                <div class="course-content">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                    <p class="category">Cinematography Basics</p>
-                    <p class="price">$169</p>
-                </div>
+                <div class="course-item">
+                    <img src="asset/img/course-1.jpg" class="img-fluid" alt="...">
+                    <div class="course-content">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <p class="category">Cinematography Basics</p>
+                        <p class="price">$169</p>
+                    </div>
 
-                <h3><a href="course-details.html">Website Design</a></h3>
-                <p class="description">Explore the art of visual storytelling through camera work, lighting techniques, and shot composition to enhance your filmmaking skills.</p>
-                <div class="trainer d-flex justify-content-between align-items-center">
-                    <div class="trainer-profile d-flex align-items-center">
-                    <img src="asset/img/trainers/trainer-1-2.jpg" class="img-fluid" alt="">
-                    <a href="" class="trainer-link">Antonio</a>
+                    <h3><a href="course-details.html">Website Design</a></h3>
+                    <p class="description">Explore the art of visual storytelling through camera work, lighting techniques, and shot composition to enhance your filmmaking skills.</p>
+                    <div class="trainer d-flex justify-content-between align-items-center">
+                        <div class="trainer-profile d-flex align-items-center">
+                        <img src="asset/img/trainers/trainer-1-2.jpg" class="img-fluid" alt="">
+                        <a href="" class="trainer-link">Antonio</a>
+                        </div>
+                        <div class="trainer-rank d-flex align-items-center">
+                        <i class="bi bi-person user-icon"></i>&nbsp;50
+                        &nbsp;&nbsp;
+                        <i class="bi bi-heart heart-icon"></i>&nbsp;65
+                        </div>
                     </div>
-                    <div class="trainer-rank d-flex align-items-center">
-                    <i class="bi bi-person user-icon"></i>&nbsp;50
-                    &nbsp;&nbsp;
-                    <i class="bi bi-heart heart-icon"></i>&nbsp;65
-                    </div>
-                </div>
                 </div>
             </div>
-            </div> <!-- End Course Item-->
+        </div> <!-- End Course Item-->
 
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
             <div class="course-item">
