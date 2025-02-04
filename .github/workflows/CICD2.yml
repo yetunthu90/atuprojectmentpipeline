@@ -65,9 +65,9 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
           
   deploy:
-    #needs: Build-Test-Pushed
+    needs: Build-Test-Pushed
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main'
+    #if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout Repository
