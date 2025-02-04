@@ -24,4 +24,11 @@ spec:
         ports:
         - containerPort: 9000
         resources: {}
+        lifecycle:
+          postStart:
+            exec:
+              command:
+                - "/bin/bash"
+                - "-c"
+                - "composer install"
 status: {}
