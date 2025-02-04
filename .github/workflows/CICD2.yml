@@ -67,7 +67,6 @@ jobs:
   deploy:
     #needs: Build-Test-Pushed
     runs-on: ubuntu-latest
-    #if: github.ref == 'refs/heads/main'
 
     steps:
       - name: Checkout Repository
@@ -81,13 +80,24 @@ jobs:
          mkdir -p $HOME/.kube  # Ensure .kube directory exists
          echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
          chmod 600 $HOME/.kube/config  # Secure the config file
-        
+
       - name: Verify Kubernetes Connection
         run: |
           kubectl cluster-info
           kubectl get nodes
+          kubectl get deployments -n default  # List all deployments
 
-      #- name: Deploy to Kubernetes
-        #run: |
-          #kubectl apply -f k8s/
-          #kubectl rollout restart deployment laravel-app
+      - name: Apply Kubernetes Manifests
+        run: |
+          kubectl apply -f k8s/
+
+      - name: Restart Deployments
+        run: |
+          kubectl rollout restart deployment app
+          kubectl rollout restart deployment web
+          kubectl rollout restart deployment database
+          kubectl rollout restart deployment phpmyadmin
+
+      - name: Verify Deployment Status
+        run: kubectl get pods -o wide
+
