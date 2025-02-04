@@ -10,11 +10,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\auth\PasswordResetMail;
 use App\Http\Controllers\CustomerRequestController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\IndexController;
 
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+
 Route::get('/aboutus', function () {
     return view('aboutus');
 })->name('about');
@@ -89,3 +88,5 @@ Route::post('/form-submit', [CustomerRequestController::class, 'store'])->name('
 
 //Dashboard count function
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::get('/', [IndexController::class,'index'])->name('index');
