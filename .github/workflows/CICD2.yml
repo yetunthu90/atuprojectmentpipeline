@@ -22,7 +22,7 @@ jobs:
           docker compose up -d --build
           
       - name: Wait for all Containers to Be Ready
-        run: sleep 20
+        run: sleep 5
 
       - name: Install Dependencies
         run: docker compose exec app composer install
@@ -93,6 +93,13 @@ jobs:
           kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
           kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
           kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+          
+      - name: Restart Deployments
+        run: |
+          kubectl rollout restart deployment app
+          kubectl rollout restart deployment web
+          kubectl rollout restart deployment database
+          kubectl rollout restart deployment phpmyadmin
 
       - name: Verify Deployment Status
         run: kubectl get pods -o wide
