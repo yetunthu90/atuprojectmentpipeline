@@ -87,12 +87,12 @@ jobs:
           kubectl get nodes
           kubectl get deployments -n default
 
-      - name: Restart Deployments
+      - name: Rolling Update Deployments
         run: |
-          kubectl rollout restart deployment app
-          kubectl rollout restart deployment web
-          kubectl rollout restart deployment database
-          kubectl rollout restart deployment phpmyadmin
+          kubectl set image deployment/app app=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          kubectl set image deployment/web web=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          kubectl set image deployment/database database=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
 
       - name: Verify Deployment Status
         run: kubectl get pods -o wide
