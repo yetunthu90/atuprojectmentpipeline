@@ -89,9 +89,9 @@ jobs:
 
       - name: Rolling Update Deployments
         run: |
-          kubectl set image deployment/app app=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
-          kubectl set image deployment/web web=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
-          kubectl set image deployment/database database=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
           kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
 
       - name: Verify Deployment Status
