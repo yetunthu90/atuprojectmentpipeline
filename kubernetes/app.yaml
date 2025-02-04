@@ -18,8 +18,8 @@ spec:
         app: app
     spec:
       containers:
-      - image: ye1234/app:latest
-        name: app-container
+      - image: ye1234/atupipeline-app:latest
+        name: app
         workingDir: /var/www
         ports:
         - containerPort: 9000

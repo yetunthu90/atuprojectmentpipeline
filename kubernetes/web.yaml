@@ -18,8 +18,8 @@ spec:
         app: web
     spec:
       containers:
-      - image: ye1234/web:latest
-        name: web-container
+      - image: ye1234/atupipeline-web:latest
+        name: web
         ports:
          - containerPort: 80
            protocol: TCP

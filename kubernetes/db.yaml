@@ -15,8 +15,8 @@ spec:
         app: database
     spec:
       containers:
-      - name: mysql
-        image: ye1234/mysqldb:latest
+      - name: database
+        image: ye1234/atupipeline-mysqldb:latest
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "HelloDublin"
