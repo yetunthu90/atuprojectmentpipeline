@@ -64,22 +64,36 @@ jobs:
           docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
           
-  #deploy:
-   # needs: Build-Test-Pushed
-    #runs-on: ubuntu-latest
-    #if: github.ref == 'refs/heads/main'
+  Deploy-To-AKS:
+    needs: Build-Test-Pushed
+    runs-on: ubuntu-latest
 
-    #steps:
-     # - name: Checkout Repository
-      #  uses: actions/checkout@v3
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      #- name: Set up Kubernetes CLI
-      #  uses: azure/setup-kubectl@v3
+      - name: Set up Kubernetes CLI
+        uses: azure/setup-kubectl@v3
 
-      #- name: Configure Kubeconfig
-       # run: echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+      - name: Configure Kubeconfig
+        run: |
+         mkdir -p $HOME/.kube  # Ensure .kube directory exists
+         echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+         chmod 600 $HOME/.kube/config  # Secure the config file
 
-      #- name: Deploy to Kubernetes
-       # run: |
-        #  kubectl apply -f k8s/
-         # kubectl rollout restart deployment laravel-app
+      - name: Verify Kubernetes Connection
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+          kubectl get deployments -n default
+
+      - name: Rolling Update Deployments
+        run: |
+          kubectl set image deployment/app app=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
+          kubectl set image deployment/web web=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
+          kubectl set image deployment/database database=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
+          kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
+
+      - name: Verify Deployment Status
+        run: kubectl get pods -o wide
+
