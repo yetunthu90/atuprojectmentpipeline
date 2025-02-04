@@ -85,11 +85,11 @@ jobs:
         run: |
           kubectl cluster-info
           kubectl get nodes
-          kubectl get deployments -n default  # List all deployments
+          kubectl get deployments -n default
 
-      - name: Apply Kubernetes Manifests
-        run: |
-          kubectl apply -f k8s/
+   #   - name: Apply Kubernetes Manifests
+    #    run: |
+     #     kubectl apply -f k8s/
 
       - name: Restart Deployments
         run: |
