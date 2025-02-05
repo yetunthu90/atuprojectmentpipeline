@@ -69,43 +69,43 @@ jobs:
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
           
           
-  #Deploy-To-AKS:
-   # needs: Build-Test-Pushed
-    #runs-on: ubuntu-latest
+  Deploy-To-AKS:
+    needs: Build-Test-Pushed
+    runs-on: ubuntu-latest
 
-    #steps:
-     # - name: Checkout Repository
-      #  uses: actions/checkout@v3
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-      #- name: Set up Kubernetes CLI
-       # uses: azure/setup-kubectl@v3
+      - name: Set up Kubernetes CLI
+        uses: azure/setup-kubectl@v3
 
-      #- name: Configure Kubeconfig
-       # run: |
-        # mkdir -p $HOME/.kube  # Ensure .kube directory exists
-         #echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-         #chmod 600 $HOME/.kube/config  # Secure the config file
+      - name: Configure Kubeconfig
+        run: |
+         mkdir -p $HOME/.kube  # Ensure .kube directory exists
+         echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+         chmod 600 $HOME/.kube/config  # Secure the config file
 
-      #- name: Verify Kubernetes Connection
-       # run: |
-        #  kubectl cluster-info
-         # kubectl get nodes
-          #kubectl get deployments -n default
+      - name: Verify Kubernetes Connection
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+          kubectl get deployments -n default
 
-      #- name: Rolling Update Deployments
-       # run: |
-        #  kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:$VERSION
-         # kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:$VERSION
-         # kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:$VERSION
-          #kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
+      - name: Rolling Update Deployments
+        run: |
+          kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:$VERSION
+          kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:$VERSION
+          kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:$VERSION
+          kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
           
-    #  - name: Restart Deployments
-     #   run: |
-      #    kubectl rollout restart deployment app
-       #   kubectl rollout restart deployment web
-         # kubectl rollout restart deployment database
-        #  kubectl rollout restart deployment phpmyadmin
+      #- name: Restart Deployments
+       # run: |
+        #  kubectl rollout restart deployment app
+         # kubectl rollout restart deployment web
+          #kubectl rollout restart deployment database
+          #kubectl rollout restart deployment phpmyadmin
 
-      #- name: Verify Deployment Status
-       # run: kubectl get pods -o wide
+      - name: Verify Deployment Status
+        run: kubectl get pods -o wide
 
