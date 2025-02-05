@@ -9,7 +9,8 @@ on:
 jobs:
   Build-Test-Pushed:
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.set_version.outputs.VERSION }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -67,13 +68,17 @@ jobs:
           # Tag and push the phpMyAdmin image
           docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
-          
+
           
   Deploy-To-AKS:
     needs: Build-Test-Pushed
     runs-on: ubuntu-latest
-
+    env:
+      VERSION: ${{ needs.build.outputs.version }}
     steps:
+      - name: Deploy Using Version
+        run: echo "Deploying version $VERSION"
+
       - name: Checkout Repository
         uses: actions/checkout@v3
 
