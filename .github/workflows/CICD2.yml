@@ -74,7 +74,7 @@ jobs:
     needs: Build-Test-Pushed
     runs-on: ubuntu-latest
     env:
-      VERSION: ${{ needs.build.outputs.version }}
+      VERSION: ${{ needs.Build-Test-Pushed.outputs.version }}
     steps:
       - name: Deploy Using Version
         run: echo "Deploying version $VERSION"
