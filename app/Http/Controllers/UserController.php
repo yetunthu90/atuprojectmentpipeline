@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Validation\Rule;
+use App\Models\Course;
 
 class UserController extends Controller
 {
@@ -82,5 +83,13 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id); // Fetch the course data by ID
         return view('users.show', compact('user'));
+    }
+    public function users_listing()
+    {   
+         // Fetch the latest 3 courses ordered by created_at
+          $courses = Course::latest()->take(3)->get();
+         // Pass data to the index view
+         return view('users.users_listing',compact('courses'));
+             
     }
 }
