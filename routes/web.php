@@ -70,6 +70,7 @@ Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+Route::get('/users_listing', [UserController::class, 'users_listing'])->name('users.users_listing');
 
 #payments
 Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
