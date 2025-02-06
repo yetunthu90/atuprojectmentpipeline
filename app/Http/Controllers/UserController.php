@@ -12,11 +12,13 @@ class UserController extends Controller
 {
     public function index()
     {
+        $user_auth = auth()->user();
+        $loggedInUser = auth()->user();
     //    Fetch all User by desc oder
         $Users = User::orderBy('created_at', 'DESC')->get();
 
         // Pass data to the index view
-        return view('users.index',compact('Users'));
+        return view('users.index',compact('Users','user_auth'));
         
     }
     public function create()
@@ -64,10 +66,15 @@ class UserController extends Controller
                 Rule::unique('users')->ignore($user->id), // Ignore the current user's email
             ],
             'password' => 'sometimes|string|min:8',
+            'role' => [
+                'required', 
+                'string', 
+                Rule::in(['admin', 'user', 'editor']), // Ensure the role is one of these values
+            ],
         ]);
 
         // Update the user
-        $user->update($request->only(['first_name', 'last_name', 'email', 'password']));
+        $user->update($request->only(['first_name', 'last_name', 'email', 'password','role']));
 
         return redirect()->route('users')->with('success', 'User updated successfully.');
     }

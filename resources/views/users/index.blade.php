@@ -53,6 +53,7 @@
                                         <th>Id</th>
                                         <th>User Name</th>
                                         <th>Email</th>
+                                        <th>Role</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -62,6 +63,7 @@
                                        <td>{{ $loop->iteration }}</td>
                                         <td>{{ $User->first_name . ' ' . $User->last_name }}</td>
                                         <td>{{ $User->email }}</td>
+                                        <td>{{ $User->role }}</td>
                                         <td>
                                               <!-- Edit Button -->
                                                 <a href="{{ route('users.edit', $User->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">

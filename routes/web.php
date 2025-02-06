@@ -61,6 +61,7 @@ Route::POST('/do-login', [AuthController::class, 'dologin'])->name('do.login');
 Route::get('/auth/forgot-password', [AuthController::class, 'forgotPassword'])->name('forgot.password');
 Route::POST('/do-forgot-password', [AuthController::class, 'doForgotPassword'])->name('do.forgot.password');
 Route::get('/reset-password/{token}', [AuthController::class, 'resetPassword'])->name('reset.password');
+Route::POST('/logout}', [AuthController::class, 'logout'])->name('logout');
 
 #user management
 Route::get('/users', [UserController::class, 'index'])->name('users');
@@ -70,7 +71,7 @@ Route::get('/users/{id}', [UserController::class, 'show'])->name('users.show');
 Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
 Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
-Route::get('/users_listing', [UserController::class, 'users_listing'])->name('users.users_listing');
+
 
 #payments
 Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
@@ -84,10 +85,8 @@ Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('pa
 #customer request
 Route::post('/form-submit', [CustomerRequestController::class, 'store'])->name('form.submit');
 
-#Total counts
-//Route::get('/dashboard', [PaymentController::class, 'dashboard'])->name('dashboard');
-
-//Dashboard count function
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::get('/', [IndexController::class,'index'])->name('index');
+Route::middleware('auth')->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/users_listing', [UserController::class, 'users_listing'])->name('users.listing');
+});

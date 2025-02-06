@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Course;
 
 class AuthController extends Controller
 {  
@@ -45,17 +46,22 @@ class AuthController extends Controller
         return view('auth.login');
     }
     
-
-    public function dologin(Request $request)
+    public function dologin(Request $request) // Accepts a Request object
     {
-        $input=['email'=>request('email'),'password'=>request('password')];
-        if(auth()->attempt($input)){
-            return redirect()->route('dashboard');
-        }
-        else{
-            return redirect()->route('login')->with('message','Login is Invalid');
+        $credentials = $request->only('email', 'password'); // Get input values
+
+        if (Auth::attempt($credentials)) {
+            $user = Auth::user(); // Retrieve authenticated user
+
+            if ($user->role === 'admin') {
+                return redirect()->route('dashboard'); // Redirect admins
+            } else {
+                return redirect()->route('users.listing'); // Redirect normal users
             }
+        } else {
+            return redirect()->route('login')->with('message', 'Login is Invalid');
         }
+    }
     public function forgotPassword(){
         return view('auth.forgot-password');
     }
@@ -67,6 +73,16 @@ class AuthController extends Controller
         Mail::to(request('email'))->send(new PasswordResetMail($users,$token));
         return $token;
 
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout(); // Logs the user out
+        $request->session()->invalidate(); // Invalidates the session
+        $request->session()->regenerateToken(); // Regenerates the CSRF token
+        $Users = User::orderBy('created_at', 'DESC')->get();
+        $courses = Course::latest()->take(3)->get();
+        return view('index', compact('courses')); // Redirects to the home page or any other page
     }
 
 }
