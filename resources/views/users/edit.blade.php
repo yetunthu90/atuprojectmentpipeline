@@ -50,7 +50,7 @@
                                                                                 @enderror  
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-6">
+                                                                <div class="col-md-12">
                                                                     <div class="form-group"><label class="small mb-1" for="email">Email</label>
                                                                         <input class="form-control py-3" id="email" type="text" name="email"  value="{{ $User->email }}"  required/>
                                                                             @error('email') 
@@ -62,6 +62,14 @@
                                                                     <div class="form-group"><label class="small mb-1" for="password">Password</label>
                                                                         <input class="form-control py-3" id="password" type="password" name="password" value="{{ $User->password }}" required />
                                                                             @error('password') 
+                                                                            <div class="text-danger">{{ $message }}</div>
+                                                                            @enderror 
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group"><label class="small mb-1" for="role">User Role</label>
+                                                                        <input class="form-control py-3" id="role" type="role" name="role" value="{{ $User->role }}" required />
+                                                                            @error('role') 
                                                                             <div class="text-danger">{{ $message }}</div>
                                                                             @enderror 
                                                                     </div>

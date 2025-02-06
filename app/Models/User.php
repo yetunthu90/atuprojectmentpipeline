@@ -23,6 +23,7 @@ class User extends Authenticatable
         'email',
         'password',
         'password_reset_token',
+        'role',
     ];
     protected $guarded = [];
     /**

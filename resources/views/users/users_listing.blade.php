@@ -1,4 +1,4 @@
-@extends('layouts.app') <!-- Extend the layout -->
+@extends('layouts.users_header') <!-- Extend the layout -->
  
 @section('title', 'Home Page') <!-- Define a title for this page -->
  
@@ -16,7 +16,6 @@
                                 <h1 class="display-3 text-white animated slideInDown">Design. Build. Inspire. Start Your Journey as a Studio Maker</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Master the art of studio design and creation. Build your dream space with expert guidance. Enroll now and create.</p>
                                 <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="{{ route('join_now') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -32,7 +31,6 @@
                                 <h1 class="display-3 text-white animated slideInDown">Step into the Spotlight – Unleash Your Inner Actor with Our Drama Course</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Learn acting, stage presence, and character development. Turn your passion into performance. Join now and start your acting journey</p>
                                 <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="{{ route('join_now') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -45,11 +43,10 @@
                     <div class="container">
                         <div class="row justify-content-start">
                             <div class="col-sm-10 col-lg-8">
-                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Course Selection Banner</h5>
+                                <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Chart Your Course – Find the Ideal Path to Your Future !!</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Choose Your Path – Discover the Perfect Course for Your Future</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Explore our wide range of courses and find the one that suits your passion and career goals. Start your journey today</p>
                                 <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="{{ route('join_now') }}" class="btn btn-light py-md-3 px-md-5 animated slideInRight">Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -58,14 +55,6 @@
         </div>
     </div>
     <!-- Carousel End -->
- 
- 
-  
- 
- 
- 
- 
- 
     <!-- Categories Start -->
    
     <div class="container-xxl py-5">
@@ -74,36 +63,6 @@
                 <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
                 <h1 class="mb-5">Top-Rated Courses</h1>
             </div>
-            <!-- <div class="row g-4 justify-content-center">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="course-item bg-light">
-                        <div class="position-relative overflow-hidden">
-                            <img class="img-fluid" src="asset/img/course-3.jpg" alt="">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="flex-shrink-0 btn btn-sm btn-primary px-3" style="border-radius: 0 30px 30px 0;">Join Now</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 pb-0">
-                            <h3 class="mb-0">$149.00</h3>
-                            <div class="mb-3">
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small class="fa fa-star text-primary"></small>
-                                <small>(123)</small>
-                            </div>
-                            <h5 class="mb-4">Graphic Design and 3D Modelling Training</h5>
-                        </div>
-                        <div class="d-flex border-top">
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-user-tie text-primary me-2"></i>John Doe</small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-clock text-primary me-2"></i>1.49 Hrs</small>
-                            <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i>30 Students</small>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <div class="row g-4 justify-content-center">
                 @foreach($courses as $course)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.{{ $loop->index + 1 }}s">

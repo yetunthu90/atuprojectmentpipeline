@@ -13,6 +13,7 @@ class DashboardController extends Controller
 {
     public function index()
     {
+        $user = auth()->user();
         // Count total payment methods
         $totalPayments = Payment::count();
 
@@ -26,9 +27,10 @@ class DashboardController extends Controller
         $totalEnquiries = CustomerRequest::count();
 
         $Customer_request = CustomerRequest::all();
+        $loggedInUser = auth()->user();
 
         // Pass data to the dashboard view
-        return view('dashboard', compact('totalPayments', 'totalCourses', 'totalUsers', 'totalEnquiries' , 'Customer_request'));
+        return view('dashboard',['user' => $user], compact('totalPayments', 'totalCourses', 'totalUsers', 'totalEnquiries' , 'Customer_request','loggedInUser'));
 
     }
 

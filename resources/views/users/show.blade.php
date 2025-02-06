@@ -43,7 +43,7 @@
                                                                         <p class="form-control" id="last_name">{{ $user->last_name }}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-md-6">
+                                                                <div class="col-md-12">
                                                                     <div class="form-group border rounded p-3">
                                                                         <label class="small mb-1 font-weight-bold" for="email">Email</label>
                                                                         <p class="form-control" id="email">{{ $user->email }}</p>
@@ -51,8 +51,14 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="password">Password</label>
-                                                                        <p class="form-control" id="password">********</p> <!-- Masked password -->
+                                                                        <label class="small mb-1 font-weight-bold" for="last_name">Last Name</label>
+                                                                        <p class="form-control" id="last_name">{{ $user->last_name }}</p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group border rounded p-3">
+                                                                        <label class="small mb-1 font-weight-bold" for="role">User Role</label>
+                                                                        <p class="form-control" id="role">{{ $user->role }}</p> 
                                                                     </div>
                                                                 </div>
                                                                
