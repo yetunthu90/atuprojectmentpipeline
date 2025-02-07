@@ -57,16 +57,16 @@ jobs:
       - name: Push App Image
         run: |
           # Tag and push the App image
-          docker tag atuprojectmentpipeline-app ${{ secrets.DOCKER_USERNAME }}/atugroup1/app:$VERSION
+          docker tag group_1_studio_ghibli_movie_maker-app-1 ${{ secrets.DOCKER_USERNAME }}/atugroup1/app:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/atugroup1/app:$VERSION
           # Tag and push the Web image
-          docker tag atuprojectmentpipeline-web  ${{ secrets.DOCKER_USERNAME }}/atugroup1/web$VERSION
+          docker tag group_1_studio_ghibli_movie_maker-web-1  ${{ secrets.DOCKER_USERNAME }}/atugroup1/web$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/atugroup1/web:$VERSION
           # Tag and push the Database image
-          docker tag atuprojectmentpipeline-database ${{ secrets.DOCKER_USERNAME }}/atugroup1/mysqldb:$VERSION
+          docker tag group_1_studio_ghibli_movie_maker-database-1 ${{ secrets.DOCKER_USERNAME }}/atugroup1/mysqldb:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/atugroup1/mysqldb:$VERSION
           # Tag and push the phpMyAdmin image
-          docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atugroup1/phpmyadmin:$VERSION
+          docker tag group_1_studio_ghibli_movie_maker-pma-1 ${{ secrets.DOCKER_USERNAME }}/atugroup1/phpmyadmin:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/atugroup1/phpmyadmin:$VERSION
           
   #Deploy-To-AKS:
