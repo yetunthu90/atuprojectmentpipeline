@@ -59,7 +59,7 @@ jobs:
           docker tag group_1_studio_ghibli_movie_maker-app ${{ secrets.DOCKER_USERNAME }}/app:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/app:$VERSION
           # Tag and push the Web image
-          docker tag group_1_studio_ghibli_movie_maker-web  ${{ secrets.DOCKER_USERNAME }}/web$VERSION
+          docker tag group_1_studio_ghibli_movie_maker-web  ${{ secrets.DOCKER_USERNAME }}/web:$VERSION
           docker push ${{ secrets.DOCKER_USERNAME }}/web:$VERSION
           # Tag and push the Database image
           docker tag group_1_studio_ghibli_movie_maker-database ${{ secrets.DOCKER_USERNAME }}/mysqldb:$VERSION
