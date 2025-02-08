@@ -271,7 +271,7 @@
         <div class="col-lg-7 ml-auto" data-aos="fade-up" data-aos-delay="100">
         <h6 class="section-title bg-white text-center text-primary px-3 mt-5">Why Choose Us</h6>
         <h1 class="mb-5">Best in the class!</h1>
-          <p>Our application stands out for its user-friendly interface, robust features, and seamless performance. We’ve designed it with your needs in mind, offering intuitive functionality that saves you time and enhances productivity. Whether you're looking for advanced features, reliable security, or consistent updates, our app provides a complete solution that grows with you. Choose our application for a smooth, efficient experience and the support you deserve.</p>
+          <p style="text-align: justify;">Our application stands out for its user-friendly interface, robust features, and seamless performance. We’ve designed it with your needs in mind, offering intuitive functionality that saves you time and enhances productivity. Whether you're looking for advanced features, reliable security, or consistent updates, our app provides a complete solution that grows with you. Choose our application for a smooth, efficient experience and the support you deserve.</p>
 
           <div class="custom-accordion" id="accordion_1">
             <div class="accordion-item">

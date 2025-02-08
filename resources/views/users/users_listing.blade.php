@@ -79,7 +79,7 @@
                             <p class="text-muted mb-2">Course ID: <span class="fw-semibold">{{ $course->course_id }}</span></p>
                             <p class="text-muted mb-2"><i class="fas fa-clock me-2"></i>{{ $course->duration }} Days</p>
                             <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>Capacity: {{ $course->capacity }}</p>
-                            <h5 class="text-success fw-bold text-primary">{{ number_format($course->price, 2) }}</h5>
+                            <h5 class="text-success fw-bold text-primary">{{ '€' . number_format($course->price, 2) }}</h5>
                             <p class="text-dark mt-3 flex-grow-1">{{ Str::limit($course->description, 100, '...') }}</p>
                         </div>
                     </div>
