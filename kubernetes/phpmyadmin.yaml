@@ -18,7 +18,7 @@ spec:
         app: phpmyadmin
     spec:
       containers:
-      - image: atugroup1/phpmyadmin:latest
+      - image: atugroup1/phpmyadmin:20250207125202
         name: phpmyadmin
         env:
         - name: PMA_HOST

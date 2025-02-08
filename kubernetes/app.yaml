@@ -18,7 +18,7 @@ spec:
         app: app
     spec:
       containers:
-      - image: atugroup1/app:latest
+      - image: atugroup1/app:20250207125202
         name: app-container
         workingDir: /var/www
         ports:

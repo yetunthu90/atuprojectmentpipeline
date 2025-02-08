@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: atugroup1/mysqldb:latest
+        image: atugroup1/mysqldb:20250207125202
         env:
         - name: MYSQL_ROOT_PASSWORD
           value: "HelloDublin"
@@ -25,7 +25,7 @@ spec:
         - name: MYSQL_PASSWORD
           value: "HelloDublin"
         - name: MYSQL_DATABASE
-          value: "ReelCraft"
+          value: "reelcraft"
         - name: MYSQL_ROOT_HOST
           value: "%" 
         ports:

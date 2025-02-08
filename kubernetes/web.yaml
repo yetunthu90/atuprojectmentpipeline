@@ -18,7 +18,7 @@ spec:
         app: web
     spec:
       containers:
-      - image: atugroup1/web:latest
+      - image: atugroup1/web:20250207125202
         name: web-container
         ports:
          - containerPort: 80
