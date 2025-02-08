@@ -95,10 +95,10 @@ jobs:
           kubectl get deployments -n default
       - name: Rolling Update Deployments
         run: |
-          kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/atugroup1/app:$VERSION
-          kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atugroup1/web:$VERSION
-          kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atugroup1/mysqldb:$VERSION
-          kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atugroup1/phpmyadmin:$VERSION
+          kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/app:$VERSION
+          kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/web:$VERSION
+          kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/mysqldb:$VERSION
+          kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/phpmyadmin:$VERSION
           
       #- name: Restart Deployments
        # run: |
