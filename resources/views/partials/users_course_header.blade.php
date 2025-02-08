@@ -10,7 +10,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('login') }}" class="nav-item nav-link">Sign In</a>
                 <a href="{{ route('login') }}" class="nav-item nav-link welcome-link">
                     @if(isset($loggedInUser))
                         <p class="welcome-text">Welcome, {{ $loggedInUser->first_name . ' ' . $loggedInUser->last_name }}</p>

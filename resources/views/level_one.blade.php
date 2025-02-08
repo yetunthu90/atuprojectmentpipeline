@@ -34,7 +34,7 @@
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                     <h6 class="section-title bg-white text-start text-primary pe-3">Course Directory</h6>
                     <h1 class="mb-4">Explore Our Comprehensive Film and Media Courses</h1>
-                    <p class="mb-4">At Reelcraft Academy, we offer a diverse range of courses tailored to equip aspiring creators with the skills and knowledge needed to excel in the world of film and media. Our programs cover every stage of the creative process, from conceptualizing stories to mastering advanced post-production techniques. Whether you’re a beginner or an experienced professional looking to enhance your expertise, our courses are designed to suit all levels of learning.</p>
+                    <p class="mb-4" style="text-align: justify;">At Reelcraft Academy, we offer a diverse range of courses tailored to equip aspiring creators with the skills and knowledge needed to excel in the world of film and media. Our programs cover every stage of the creative process, from conceptualizing stories to mastering advanced post-production techniques. Whether you’re a beginner or an experienced professional looking to enhance your expertise, our courses are designed to suit all levels of learning.</p>
                         <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
                             <p class="mb-0"><i class="fa fa fa-plus-square text-primary me-2"></i>Animation</p>
