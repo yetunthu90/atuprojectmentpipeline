@@ -52,9 +52,13 @@
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
                                                                         <label class="small mb-1 font-weight-bold" for="password">Password</label>
-                                                                        <p class="form-control" id="password">{{ $user->password }}</p>
+                                                                        <input class="form-control py-3 mb-3" id="password" type="password" name="password" value="{{ $user->password }}" required />
+                                                                            @error('password')
+                                                                            <div class="text-danger">{{ $message }}</div>
+                                                                            @enderror
                                                                     </div>
                                                                 </div>
+
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
                                                                         <label class="small mb-1 font-weight-bold" for="role">User Role</label>
