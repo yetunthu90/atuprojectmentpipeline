@@ -3,7 +3,7 @@
 @section('content')
     <main>
     <div class="container-fluid">
-            <h1 class="mt-4">Course Module</h1>
+            <h1 class="mt-4">User Module</h1>
             <main>
                 <div class="card mb-4">
                     <!-- <div class="card-header"><i class="fas fa-table mr-1"></i>Course  Details
@@ -13,7 +13,7 @@
                     </div> -->
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                        <i class="fa fa-eye mr-2" aria-hidden="true"></i>Course Details
+                        <i class="fa fa-eye mr-2" aria-hidden="true"></i>User Details
                         </div>
                          <!-- Back Button -->
                         <div>
@@ -51,8 +51,8 @@
                                                                 </div>
                                                                 <div class="col-md-6">
                                                                     <div class="form-group border rounded p-3">
-                                                                        <label class="small mb-1 font-weight-bold" for="last_name">Last Name</label>
-                                                                        <p class="form-control" id="last_name">{{ $user->last_name }}</p>
+                                                                        <label class="small mb-1 font-weight-bold" for="password">Password</label>
+                                                                        <p class="form-control" id="password">{{ $user->password }}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="col-md-6">
