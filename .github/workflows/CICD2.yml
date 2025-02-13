@@ -1,8 +1,8 @@
-name: Laravel CI/CD with Docker Compose
+#name: Laravel CI/CD with Docker Compose
 
-on:
-  push:
-    branches:
+#on:
+#  push:
+#    branches:
     #  - main
     #  - dev
 
