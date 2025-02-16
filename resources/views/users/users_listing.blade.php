@@ -56,6 +56,23 @@
     </div>
     <!-- Carousel End -->
     <!-- Categories Start -->
+
+    <section class="simple-cta">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 offset-lg-1">
+          <div class="left-image">
+            <img src="assets/images/cta-left-image.png" alt="">
+          </div>
+        </div>
+        <div class="col-lg-5 align-self-center">
+          <h6>Get the sale right now!</h6>
+          <h4>Up to 50% OFF For VFX & CGI courses</h4>
+          <p>Transform your creativity into stunning visual effects with our VFX & CGI courses! Learn industry-standard tools like Adobe After Effects, Nuke, Maya, and Blender to create breathtaking animations, realistic special effects, and cinematic visuals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
    
     <div class="container-xxl py-5">
         <div class="container">
