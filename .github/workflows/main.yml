@@ -1,6 +1,8 @@
 on:
-  workflow_dispatch: # Enables manual triggering
-
+  #workflow_dispatch: # Enables manual triggering
+  push:
+    branches:
+     - dev
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
