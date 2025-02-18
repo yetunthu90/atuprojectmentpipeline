@@ -9,7 +9,8 @@ on:
 jobs:
   Build-Test-Pushed:
     runs-on: ubuntu-latest
-
+    outputs:
+      version: ${{ steps.set_version.outputs.VERSION }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
@@ -48,60 +49,68 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
+          
+      - name: Set Version
+        id: set_version
+        run: echo "VERSION=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV && echo "VERSION=$(date +%Y%m%d%H%M%S)" >> $GITHUB_OUTPUT
 
       - name: Push App Image
         run: |
           # Tag and push the App image
-          docker tag atuprojectmentpipeline-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app
+          docker tag atuprojectmentpipeline-app ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:$VERSION
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-app:$VERSION
           # Tag and push the Web image
-          docker tag atuprojectmentpipeline-web  ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web
+          docker tag atuprojectmentpipeline-web  ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:$VERSION
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-web:$VERSION
           # Tag and push the Database image
-          docker tag atuprojectmentpipeline-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb
+          docker tag atuprojectmentpipeline-database ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:$VERSION
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:$VERSION
           # Tag and push the phpMyAdmin image
-          docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
-          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin
+          docker tag atuprojectmentpipeline-pma ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
+          docker push ${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
+
           
+  Deploy-To-AKS:
+    needs: Build-Test-Pushed
+    runs-on: ubuntu-latest
+    env:
+      VERSION: ${{ needs.Build-Test-Pushed.outputs.version }}
+    steps:
+      - name: Deploy Using Version
+        run: echo "Deploying version $VERSION"
+
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Kubernetes CLI
+        uses: azure/setup-kubectl@v3
+
+      - name: Configure Kubeconfig
+        run: |
+         mkdir -p $HOME/.kube  # Ensure .kube directory exists
+         echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
+         chmod 600 $HOME/.kube/config  # Secure the config file
+
+      - name: Verify Kubernetes Connection
+        run: |
+          kubectl cluster-info
+          kubectl get nodes
+          kubectl get deployments -n default
+
+      - name: Rolling Update Deployments
+        run: |
+          kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:$VERSION
+          kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:$VERSION
+          kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:$VERSION
+          kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:$VERSION
           
-  #Deploy-To-AKS:
-   # needs: Build-Test-Pushed
-    #runs-on: ubuntu-latest
-
-    #steps:
-     # - name: Checkout Repository
-      #  uses: actions/checkout@v3
-
-      #- name: Set up Kubernetes CLI
-       # uses: azure/setup-kubectl@v3
-
-      #- name: Configure Kubeconfig
+      #- name: Restart Deployments
        # run: |
-        # mkdir -p $HOME/.kube  # Ensure .kube directory exists
-         #echo "${{ secrets.KUBECONFIG }}" | base64 --decode > $HOME/.kube/config
-         #chmod 600 $HOME/.kube/config  # Secure the config file
+        #  kubectl rollout restart deployment app
+         # kubectl rollout restart deployment web
+          #kubectl rollout restart deployment database
+          #kubectl rollout restart deployment phpmyadmin
 
-      #- name: Verify Kubernetes Connection
-       # run: |
-        #  kubectl cluster-info
-         # kubectl get nodes
-          #kubectl get deployments -n default
-
-      #- name: Rolling Update Deployments
-       # run: |
-        #  kubectl set image deployment/app app-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-app:latest
-         # kubectl set image deployment/web web-container=${{ secrets.DOCKER_USERNAME }}/atupipeline-web:latest
-         # kubectl set image deployment/database mysql=${{ secrets.DOCKER_USERNAME }}/atupipeline-mysqldb:latest
-          #kubectl set image deployment/phpmyadmin phpmyadmin=${{ secrets.DOCKER_USERNAME }}/atupipeline-phpmyadmin:latest
-          
-    #  - name: Restart Deployments
-     #   run: |
-      #    kubectl rollout restart deployment app
-       #   kubectl rollout restart deployment web
-         # kubectl rollout restart deployment database
-        #  kubectl rollout restart deployment phpmyadmin
-
-      #- name: Verify Deployment Status
-       # run: kubectl get pods -o wide
+      - name: Verify Deployment Status
+        run: kubectl get pods -o wide
 
