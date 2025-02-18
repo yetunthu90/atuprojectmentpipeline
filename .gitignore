@@ -26,3 +26,5 @@ main.tfplan
 .terraform.lock.hcl
 terraform.tfstate.backup
 terraform.tfstate
+Terraform/azurek8s
+Terraform/kubeconfig.yaml
