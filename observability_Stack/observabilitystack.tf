@@ -25,7 +25,8 @@ resource "kubernetes_namespace" "newrelic" {
 # Install New Relic Kubernetes Integration
 resource "helm_release" "newrelic_integration" {
   name       = "newrelic-bundle"
-  namespace  = kubernetes_namespace.newrelic.metadata[0].name
+  #namespace  = kubernetes_namespace.newrelic.metadata[0].name
+
   chart      = "nri-bundle"
   repository = "https://helm-charts.newrelic.com"
 
@@ -53,7 +54,8 @@ EOF
 # Fluent Bit for Log Forwarding to New Relic
 resource "helm_release" "fluent_bit" {
   name       = "fluent-bit"
-  namespace  = kubernetes_namespace.newrelic.metadata[0].name
+  #namespace  = kubernetes_namespace.newrelic.metadata[0].name
+
   chart      = "fluent-bit"
   repository = "https://fluent.github.io/helm-charts"
 
@@ -78,7 +80,8 @@ EOF
 # (Optional) Prometheus Setup
 resource "helm_release" "prometheus" {
   name       = "prometheus"
-  namespace  = kubernetes_namespace.newrelic.metadata[0].name
+  #namespace  = kubernetes_namespace.newrelic.metadata[0].name
+
   chart      = "prometheus"
   repository = "https://prometheus-community.github.io/helm-charts"
 
