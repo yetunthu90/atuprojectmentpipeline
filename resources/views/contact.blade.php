@@ -34,7 +34,7 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <h5>Get In Touch</h5>
-                    <p class="mb-4">The contact form is currently inactive. Get a functional and working contact form with Ajax & PHP in a few minutes. Just copy and paste the files, add a little code and you're done.</p>
+                    <p class="mb-4" style="text-align: justify;">Get in touch with Reelcraft Academy! Whether you have questions, need more information, or want to discuss our courses, we’re here to help. Contact us at info@reelcraftacademy.com or call us at +1-800-123-4567. A member of our team will get back to you as soon as possible.</p>
                     <div class="d-flex align-items-center mb-3">
                         <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary" style="width: 50px; height: 50px;">
                             <i class="fa fa-map-marker-alt text-white"></i>
@@ -50,7 +50,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Mobile</h5>
-                            <p class="mb-0">+012 345 67890</p>
+                            <p class="mb-0">+1-800-123-4567</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -59,7 +59,7 @@
                         </div>
                         <div class="ms-3">
                             <h5 class="text-primary">Email</h5>
-                            <p class="mb-0">info@example.com</p>
+                            <p class="mb-0">info@reelcraftacademy.com</p>
                         </div>
                     </div>
                 </div>

@@ -11,9 +11,9 @@ class CourseController extends Controller
     {
        // Fetch all courses
         $courses = Course::all();
-
+        $loggedInUser = auth()->user();
         // Pass data to the index view
-        return view('courses.index', compact('courses'));
+        return view('courses.index', compact('courses','loggedInUser'));
         // return view('courses.index');
     }
     public function create()
@@ -78,6 +78,12 @@ class CourseController extends Controller
     {
         $course = Course::findOrFail($id); // Fetch the course data by ID
         return view('courses.show', compact('course'));
+    }
+
+    public function courselist()
+    {
+       
+        return 'hiii';
     }
 
 }

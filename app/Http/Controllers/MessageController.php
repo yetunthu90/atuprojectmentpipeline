@@ -17,6 +17,6 @@ class MessageController extends Controller
         ]);
 
         Message::create($request->all());
-        return redirect()->route('contact')->with('success', 'Message sent successfully!');
+        return redirect()->route('contact')->with('success', 'Thank you for your message! We will get back to you shortly.');
     }
 }
