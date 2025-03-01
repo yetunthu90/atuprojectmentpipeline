@@ -6,7 +6,7 @@ metadata:
     app: app
   name: app
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: app
@@ -18,7 +18,7 @@ spec:
         app: app
     spec:
       containers:
-      - image: atugroup1/app:20250207125202
+      - image: atugroup1/app:20250227193353
         name: app-container
         workingDir: /var/www
         ports:
