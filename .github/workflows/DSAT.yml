@@ -14,6 +14,13 @@ jobs:
         uses: zaproxy/action-baseline@v0.6.1
         with:
           docker_name: 'zaproxy/zap-stable'
-          target: 'http://135.234.200.45/'
+          #target: 'http://135.234.200.45/'
+          target: 'https://www.zaproxy.org/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
+          
+      - name: Upload ZAP Scan Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: zap-scan-results
+          path: zap_scan_results/
