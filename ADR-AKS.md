@@ -1,15 +1,20 @@
-# ADR N: brief decision title 
-Describe here the forces that influence the design decision, including technological, cost-related, and project local. 
+# ADR: Azure Kubernetes Cluster for Project Final Deployment
 
-## Decision 
-Describe here our response to these forces, that is, the design decision that was made. State the decision in full sentences, with active voice ("We will...").
+## Context
+- [x] Our project is able to deploy to an AKS cluster without any modification in code, so we chose AKS.
+- [x] For this pilot project, we already have Azure credit points, so we do not need to worry about cost limitations.
 
-## Rationale 
-Describe here the rationale for the design decision. Also indicate the rationale for significant *rejected* alternatives. This section may also indicate assumptions, constraints, requirements, and results of evaluations and experiments.
+## Decision
+- [x] We decided to use Azure Kubernetes Service (AKS) to avoid any additional costs and reduce the effort required for deployment.
+
+## Rationale
+- [x] Before making this decision, we considered using Amazon Elastic Kubernetes Service (EKS) or Elastic Container Service (ECS).
+- [x] However, these services could incur additional charges, which we wanted to avoid. This was the primary reason for selecting AKS for our project deployment.
 
 ## Status
-[Proposed | Accepted | Deprecated | Superseded]
-If deprecated, indicate why. If superseded, include a link to the new ADR. 
+**Accepted**  
+- [x] The proposed ADR has been agreed upon and approved by all team members.
 
 ## Consequences
-Describe here the resulting context, after applying the decision. All consequences should be listed, not just the "positive" ones. 
+- [x]  The project deployment went smoothly using AKS.
+- [x]  However, we need to ensure that the credit points do not exceed the allocated limit.
