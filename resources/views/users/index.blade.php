@@ -54,6 +54,7 @@
                                         <th>User Name</th>
                                         <th>Email</th>
                                         <th>Role</th>
+                                        <th>Enrolled Courses</th> 
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -64,6 +65,18 @@
                                         <td>{{ $User->first_name . ' ' . $User->last_name }}</td>
                                         <td>{{ $User->email }}</td>
                                         <td>{{ $User->role }}</td>
+                                        <td>
+                                            @if($User->courses->isEmpty())
+                                                <span class="text-muted">No courses enrolled</span>
+                                            @else
+                                                <ul class="list-unstyled">
+                                                    @foreach($User->courses as $course)
+                                                    
+                                                        <li>{{ $loop->iteration }}. {{ $course->course_name }}</li>
+                                                    @endforeach
+                                                </ul>
+                                            @endif
+                                        </td>
                                         <td>
                                               <!-- Edit Button -->
                                                 <a href="{{ route('users.edit', $User->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">

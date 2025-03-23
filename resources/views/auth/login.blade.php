@@ -34,12 +34,13 @@
                                                     <div class="text-danger">{{ $message }}</div>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
+                                            
+                                            <!-- <div class="form-group">
                                                 <div class="custom-control custom-checkbox mt-2"><input class="custom-control-input" id="rememberPasswordCheck" type="checkbox" /><label class="custom-control-label" for="rememberPasswordCheck">Remember password</label></div>
-                                            </div>
-                                            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="{{ route('forgot.password') }}">Forgot Password?</a>
+                                            </div> -->
+                                            <!-- <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"><a class="small" href="{{ route('forgot.password') }}">Forgot Password?</a> -->
                                               <!-- <a class="btn btn-primary" href="index.html">Login</a> -->
-                                              <button class="btn btn-primary" type="submit">Login</button>
+                                              <button class="btn btn-primary mt-4" type="submit">Login</button>
                                             </div>
                                         </form>
                                     </div>

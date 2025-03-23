@@ -4,6 +4,7 @@
  
 @section('content') <!-- Define the content section -->
    <!-- Carousel Start -->
+   <meta name="csrf-token" content="{{ csrf_token() }}">
    <div class="container-fluid p-0 mb-5">
         <div class="owl-carousel header-carousel position-relative">
             <div class="owl-carousel-item position-relative">
@@ -74,38 +75,76 @@
     </div>
   </section>
    
-    <div class="container-xxl py-5">
-        <div class="container">
-            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
-                <h1 class="mb-5">Top-Rated Courses</h1>
-            </div>
-            <div class="row g-4 justify-content-center">
-                @foreach($courses as $course)
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.{{ $loop->index + 1 }}s">
-                    <div class="course-item bg-light shadow-lg rounded overflow-hidden d-flex flex-column" style="height: 100%;">
-                        <div class="position-relative">
-                            <img class="img-fluid w-100" src="{{ asset('asset/img/course-' . ($loop->index + 1) . '.jpg') }}" alt="{{ $course->course_name }}">
-                            <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
-                                <a href="#" class="btn btn-sm btn-primary px-4 border-end" style="border-radius: 30px 0 0 30px;">Read More</a>
-                                <a href="#" class="btn btn-sm btn-success px-4" style="border-radius: 0 30px 30px 0;">Join Now</a>
-                            </div>
-                        </div>
-                        <div class="text-center p-4 d-flex flex-column flex-grow-1">
-                            <h4 class="fw-bold text-primary">{{ $course->course_name }}</h4>
-                            <p class="text-muted mb-2">Course ID: <span class="fw-semibold">{{ $course->course_id }}</span></p>
-                            <p class="text-muted mb-2"><i class="fas fa-clock me-2"></i>{{ $course->duration }} Days</p>
-                            <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>Capacity: {{ $course->capacity }}</p>
-                            <h5 class="text-success fw-bold text-primary">{{ '€' . number_format($course->price, 2) }}</h5>
-                            <p class="text-dark mt-3 flex-grow-1">{{ Str::limit($course->description, 100, '...') }}</p>
-                        </div>
-                    </div>
+  <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Courses</h6>
+            <h1 class="mb-5">Top-Rated Courses</h1>
+        </div>
+        <div class="row g-4 justify-content-center">
+        @foreach($courses as $course)
+    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.{{ $loop->index + 1 }}s">
+        <div class="course-item bg-light shadow-lg rounded overflow-hidden d-flex flex-column" style="height: 100%;">
+            <div class="position-relative">
+                @php
+                    $imageIndex = ($loop->index % 3) + 1; // Cycles through 1, 2, 3
+                @endphp
+                <img class="img-fluid w-100" src="{{ asset('asset/img/course-' . $imageIndex . '.jpg') }}" alt="{{ $course->course_name }}">
+                <div class="w-100 d-flex justify-content-center position-absolute bottom-0 start-0 mb-4">
+                    <!-- Read More Button (Triggers Modal) -->
+                    <button type="button" class="btn btn-sm btn-primary px-4 border-end" style="border-radius: 30px 0 0 30px;" data-bs-toggle="modal" data-bs-target="#descriptionModal{{ $course->id }}">
+                        Read More
+                    </button>
+                    <!-- Join Now Button (Triggers AJAX Call) -->
+                    @if(auth()->user() && auth()->user()->courses->contains($course->id))
+                        <button type="button" class="btn btn-sm btn-secondary px-4" style="border-radius: 0 30px 30px 0;" disabled>
+                            Already Joined
+                        </button>
+                    @else
+                        <button type="button" class="btn btn-sm btn-success px-4 join-now-button" style="border-radius: 0 30px 30px 0;" data-course-id="{{ $course->id }}" data-course-name="{{ $course->course_name }}">
+                            Join Now
+                        </button>
+                    @endif
                 </div>
-                @endforeach
+            </div>
+            <div class="text-center p-4 d-flex flex-column flex-grow-1">
+                <h4 class="fw-bold text-primary">{{ $course->course_name }}</h4>
+                <p class="text-muted mb-2">Course ID: <span class="fw-semibold">{{ $course->course_id }}</span></p>
+                <p class="text-muted mb-2"><i class="fas fa-clock me-2"></i>{{ $course->duration }} Days</p>
+                <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>Capacity: {{ $course->capacity }}</p>
+                <h5 class="text-success fw-bold text-primary">{{ '€' . number_format($course->price, 2) }}</h5>
             </div>
         </div>
     </div>
-    <!-- Courses End -->
+
+    <!-- Modal for Course Description -->
+    <div class="modal fade" id="descriptionModal{{ $course->id }}" tabindex="-1" aria-labelledby="descriptionModalLabel{{ $course->id }}" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="descriptionModalLabel{{ $course->id }}">{{ $course->course_name }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>{{ $course->description }}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@endforeach
+        </div>
+    </div>
+</div>
+
+<!-- Custom Success Alert (Hidden by Default) -->
+<div id="successAlert" class="alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-3" style="display: none;" role="alert">
+    <span id="successMessage"></span>
+    <button type="button" class="btn-close" onclick="hideSuccessAlert()"></button>
+</div>
+
  
  
    
@@ -125,5 +164,44 @@
  
 <!-- Template Javascript -->
 <script src="asset/js/main.js"></script>
+<!-- JavaScript for Join Now Button and Success Alert -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Handle "Join Now" button click
+        $('.join-now-button').click(function () {
+            var courseId = $(this).data('course-id');
+            var courseName = $(this).data('course-name');
+
+            // Send AJAX request
+            $.ajax({
+                url: '/join-course/' + courseId,
+                method: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
+                },
+                success: function (response) {
+                    if (response.success) {
+                        // Show success alert
+                        $('#successMessage').text('You have successfully joined the course: ' + courseName);
+                        $('#successAlert').fadeIn().delay(3000).fadeOut();
+                    }
+                },
+                error: function (xhr) {
+                    if (xhr.status === 419) {
+                        alert('CSRF token mismatch. Please refresh the page and try again.');
+                    } else {
+                        alert('An error occurred. Please try again.');
+                    }
+                }
+            });
+        });
+    });
+
+    // Hide success alert
+    function hideSuccessAlert() {
+        $('#successAlert').fadeOut();
+    }
+</script>
 @endsection
  

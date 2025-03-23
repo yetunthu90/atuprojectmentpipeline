@@ -93,8 +93,8 @@ class UserController extends Controller
     }
     public function users_listing()
     {   
-         // Fetch the latest 3 courses ordered by created_at
-          $courses = Course::latest()->take(3)->get();
+         // Fetch the latest courses ordered by created_at
+         $courses = Course::all();
          // Pass data to the index view
          return view('users.users_listing',compact('courses'));
              
