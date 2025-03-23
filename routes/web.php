@@ -11,12 +11,15 @@ use App\Http\Controllers\auth\PasswordResetMail;
 use App\Http\Controllers\CustomerRequestController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AboutUsController;
 
 
 
-Route::get('/aboutus', function () {
-    return view('aboutus');
-})->name('about');
+// Route::get('/aboutus', function () {
+//     return view('aboutus');
+// })->name('about');
+Route::get('/aboutus', [AboutUsController::class, 'index'])->name('about');
+Route::get('/about-us', [AboutUsController::class, 'index']);
 Route::get('/contactus', function () {
     return view('contact');
 })->name('contact');
@@ -40,6 +43,7 @@ Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('cours
 Route::post('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::delete('/courses/listing', [CourseController::class, 'courselist']);
+Route::post('/join-course/{courseId}', [CourseController::class, 'joinCourse'])->name('join.course');
 
 #enquiry management
 Route::get('/join_now', [JoinnowController::class, 'index'])->name('join_now');

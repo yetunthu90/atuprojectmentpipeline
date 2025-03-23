@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CourseController extends Controller
 {
@@ -85,5 +88,65 @@ class CourseController extends Controller
        
         return 'hiii';
     }
+    // public function joinCourse(Request $request, $courseId)
+    // {
+    //     // Get the authenticated user
+    //     $user = Auth::user();
 
+    //     // Find the course
+    //     $course = Course::findOrFail($courseId);
+
+    //     // Attach the course to the user
+    //     $user->courses()->attach($courseId);
+
+    //     // Return a success response
+    //     return response()->json([
+    //         'success' => true,
+    //         'message' => 'You have successfully joined the course: ' . $course->course_name,
+    //     ]);
+    // }
+    public function joinCourse(Request $request, $courseId)
+    {
+        try {
+            // Get the authenticated user
+            $user = Auth::user();
+    
+            if (!$user) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'User not authenticated.',
+                ], 401);
+            }
+    
+            // Find the course
+            $course = Course::findOrFail($courseId);
+    
+            // Check if the user has already joined the course
+            if ($user->courses()->where('course_user.course_id', $courseId)->exists()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'You have already joined this course: ' . $course->course_name,
+                ]);
+            }
+    
+            // Attach the course to the user
+            $user->courses()->attach($courseId);
+    
+            // Return a success response
+            return response()->json([
+                'success' => true,
+                'message' => 'You have successfully joined the course: ' . $course->course_name,
+            ]);
+        } catch (\Exception $e) {
+            // Log the error
+            Log::error('Error joining course: ' . $e->getMessage());
+    
+            // Return an error response
+            return response()->json([
+                'success' => false,
+                'message' => 'An error occurred while joining the course.',
+                'error' => $e->getMessage(),
+            ], 500);
+        }
+    }
 }
