@@ -88,23 +88,7 @@ class CourseController extends Controller
        
         return 'hiii';
     }
-    // public function joinCourse(Request $request, $courseId)
-    // {
-    //     // Get the authenticated user
-    //     $user = Auth::user();
-
-    //     // Find the course
-    //     $course = Course::findOrFail($courseId);
-
-    //     // Attach the course to the user
-    //     $user->courses()->attach($courseId);
-
-    //     // Return a success response
-    //     return response()->json([
-    //         'success' => true,
-    //         'message' => 'You have successfully joined the course: ' . $course->course_name,
-    //     ]);
-    // }
+    
     public function joinCourse(Request $request, $courseId)
     {
         try {
@@ -149,4 +133,5 @@ class CourseController extends Controller
             ], 500);
         }
     }
+    
 }

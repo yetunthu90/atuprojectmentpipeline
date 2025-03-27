@@ -49,6 +49,16 @@
                         <a class="nav-link" href="{{ url('enquiry') }}">Enquiry Module</a>
                     </nav>
                 </div>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts-four" aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fa fa-envelope"></i></div>
+                    Contact US
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse" id="collapseLayouts-four" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link" href="{{ url('contactus_list') }}">Message Module</a>
+                    </nav>
+                </div>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fa fa-lock"></i></div>
                     User Credential
