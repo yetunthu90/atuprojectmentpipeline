@@ -56,6 +56,12 @@
         </div>
     </div>
     <!-- Carousel End -->
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show">
+        <i class="bi bi-check-circle-fill me-2"></i> {{ session('success') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+@endif
     <!-- Categories Start -->
 
     <section class="simple-cta">
@@ -95,13 +101,16 @@
                     <button type="button" class="btn btn-sm btn-primary px-4 border-end" style="border-radius: 30px 0 0 30px;" data-bs-toggle="modal" data-bs-target="#descriptionModal{{ $course->id }}">
                         Read More
                     </button>
-                    <!-- Join Now Button (Triggers AJAX Call) -->
+                    <!-- Join Now Button (Triggers Confirmation Modal) -->
                     @if(auth()->user() && auth()->user()->courses->contains($course->id))
                         <button type="button" class="btn btn-sm btn-secondary px-4" style="border-radius: 0 30px 30px 0;" disabled>
                             Already Joined
                         </button>
                     @else
-                        <button type="button" class="btn btn-sm btn-success px-4 join-now-button" style="border-radius: 0 30px 30px 0;" data-course-id="{{ $course->id }}" data-course-name="{{ $course->course_name }}">
+                        <button type="button" class="btn btn-sm btn-success px-4 join-now-button" style="border-radius: 0 30px 30px 0;" 
+                                data-bs-toggle="modal" data-bs-target="#confirmationModal"
+                                data-course-id="{{ $course->id }}" 
+                                data-course-name="{{ $course->course_name }}">
                             Join Now
                         </button>
                     @endif
@@ -110,7 +119,7 @@
             <div class="text-center p-4 d-flex flex-column flex-grow-1">
                 <h4 class="fw-bold text-primary">{{ $course->course_name }}</h4>
                 <p class="text-muted mb-2">Course ID: <span class="fw-semibold">{{ $course->course_id }}</span></p>
-                <p class="text-muted mb-2"><i class="fas fa-clock me-2"></i>{{ $course->duration }} Days</p>
+                <p class="text-muted mb-2"><i class="fas fa-clock me-2"></i>Duration: {{ $course->duration }} Days</p>
                 <p class="text-muted mb-2"><i class="fas fa-users me-2"></i>Capacity: {{ $course->capacity }}</p>
                 <h5 class="text-success fw-bold text-primary">{{ '€' . number_format($course->price, 2) }}</h5>
             </div>
@@ -127,6 +136,8 @@
                 </div>
                 <div class="modal-body">
                     <p>{{ $course->description }}</p>
+                    <p>Start Date : {{ $course->start_date }} - End Date : {{ $course->end_date }}</p>
+                    <!-- <p>End Date : {{ $course->end_date }}</p> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -139,18 +150,31 @@
     </div>
 </div>
 
+<!-- Confirmation Modal -->
+<div class="modal fade" id="confirmationModal" tabindex="-1" aria-labelledby="confirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="confirmationModalLabel">Confirm Join Course</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to join the course: <strong id="courseNameInModal"></strong>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirmJoinButton">Yes, Join Now</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- Custom Success Alert (Hidden by Default) -->
-<div id="successAlert" class="alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-3" style="display: none;" role="alert">
+<div id="successAlert" class="alert alert-success alert-dismissible fade show position-fixed top-0 end-0 m-3" style="display: none; z-index: 1100;" role="alert">
     <span id="successMessage"></span>
     <button type="button" class="btn-close" onclick="hideSuccessAlert()"></button>
 </div>
-
  
- 
-   
- 
- 
-
     <!-- Testimonial End -->
       <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
@@ -168,33 +192,53 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     $(document).ready(function () {
-        // Handle "Join Now" button click
+        let currentCourseId = null;
+        let currentCourseName = null;
+        
+        // When a Join Now button is clicked, store the course info and show confirmation modal
         $('.join-now-button').click(function () {
-            var courseId = $(this).data('course-id');
-            var courseName = $(this).data('course-name');
-
-            // Send AJAX request
-            $.ajax({
-                url: '/join-course/' + courseId,
-                method: 'POST',
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') // Include CSRF token
-                },
-                success: function (response) {
-                    if (response.success) {
-                        // Show success alert
-                        $('#successMessage').text('You have successfully joined the course: ' + courseName);
-                        $('#successAlert').fadeIn().delay(3000).fadeOut();
+            currentCourseId = $(this).data('course-id');
+            currentCourseName = $(this).data('course-name');
+            $('#courseNameInModal').text(currentCourseName);
+        });
+        
+        // When confirm button is clicked in the modal
+        $('#confirmJoinButton').click(function () {
+            if (currentCourseId && currentCourseName) {
+                // Send AJAX request
+                $.ajax({
+                    url: '/join-course/' + currentCourseId,
+                    method: 'POST',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            // Close the confirmation modal
+                            $('#confirmationModal').modal('hide');
+                            
+                            // Show success alert
+                            $('#successMessage').text('You have successfully joined the course: ' + currentCourseName);
+                            $('#successAlert').fadeIn().delay(3000).fadeOut();
+                            
+                            // Disable the Join Now button and change its text
+                            $('.join-now-button[data-course-id="' + currentCourseId + '"]')
+                                .removeClass('btn-success')
+                                .addClass('btn-secondary')
+                                .text('Already Joined')
+                                .prop('disabled', true);
+                        }
+                    },
+                    error: function (xhr) {
+                        $('#confirmationModal').modal('hide');
+                        if (xhr.status === 419) {
+                            alert('CSRF token mismatch. Please refresh the page and try again.');
+                        } else {
+                            alert('An error occurred. Please try again.');
+                        }
                     }
-                },
-                error: function (xhr) {
-                    if (xhr.status === 419) {
-                        alert('CSRF token mismatch. Please refresh the page and try again.');
-                    } else {
-                        alert('An error occurred. Please try again.');
-                    }
-                }
-            });
+                });
+            }
         });
     });
 
@@ -203,5 +247,5 @@
         $('#successAlert').fadeOut();
     }
 </script>
+
 @endsection
- 

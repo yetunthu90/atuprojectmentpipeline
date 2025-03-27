@@ -26,12 +26,15 @@
                         </form>
                     </div>
                 </div>    
-                <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>  
+                <!-- <a href="{{ route('users_emergency') }}" class="nav-item nav-link">Emergency Contact</a>   -->
+                <a href="{{ route('users_emergency') }}" class="nav-item nav-link">Need Assitance</a>
             </div>
             <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
     </nav>
     <!-- Navbar End -->
+    
+
 </header>
 <style>
     /* Add this to your CSS file or <style> tag */
