@@ -200,7 +200,7 @@
           </div>
 
           <p data-aos="fade-up" data-aos-delay="200">
-            <a href="" class="btn btn-primary mr-1">Admission</a>
+            <a href="{{ route('join_now') }}" class="btn btn-primary mr-1">Admission</a>
           </p>
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">

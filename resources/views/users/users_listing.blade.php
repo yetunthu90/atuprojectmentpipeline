@@ -16,7 +16,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Where Imagination Meets Innovation – Dive Into Studio Making</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Design. Build. Inspire. Start Your Journey as a Studio Maker</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Master the art of studio design and creation. Build your dream space with expert guidance. Enroll now and create.</p>
-                                <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="{{ route('users_emergency') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Lights, Camera, Action – Ignite Your Acting Passion</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Step into the Spotlight – Unleash Your Inner Actor with Our Drama Course</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Learn acting, stage presence, and character development. Turn your passion into performance. Join now and start your acting journey</p>
-                                <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="{{ route('users_emergency') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                                 <h5 class="text-primary text-uppercase mb-3 animated slideInDown">Chart Your Course – Find the Ideal Path to Your Future !!</h5>
                                 <h1 class="display-3 text-white animated slideInDown">Choose Your Path – Discover the Perfect Course for Your Future</h1>
                                 <p class="fs-5 text-white mb-4 pb-2">Explore our wide range of courses and find the one that suits your passion and career goals. Start your journey today</p>
-                                <a href="{{ route('about') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
+                                <a href="{{ route('users_emergency') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
                             </div>
                         </div>
                     </div>
