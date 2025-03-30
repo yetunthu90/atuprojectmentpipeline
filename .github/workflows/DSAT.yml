@@ -16,15 +16,9 @@ jobs:
         uses: zaproxy/action-baseline@v0.6.1
         with:
           docker_name: 'zaproxy/zap-stable'
-          token: ${{ secrets.GITHUB_TOKEN }}  # Explicitly set if needed
+          token: ${{ secrets.GITHUB_TOKEN }}
           target: 'http://134.33.240.44/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
           upload_artifact: false
-      - name: Upload ZAP Scan Reports
-        if: always()  # Upload even if the scan fails
-        uses: actions/upload-artifact@v3
-        with:
-          name: zap-scan-results
-          path: |
-            report_html.html
+
