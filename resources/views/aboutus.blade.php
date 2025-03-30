@@ -3,6 +3,7 @@
 @section('title', 'About Us Page') <!-- Define a title for this page -->
 
 @section('content') <!-- Define the content section -->
+
  <!-- Header Start -->
  <div class="container-fluid bg-primary py-5 mb-5 page-header">
         <div class="container py-5">
@@ -72,7 +73,7 @@
         </div>
         </div> <!-- /.container -->
     </div> <!-- /.untree_co-section -->
-  <div class="untree_co-section bg-light">
+  <!-- <div class="untree_co-section bg-light">
     <div class="container">
       <div class="row justify-content-center mb-5">
         <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
@@ -131,7 +132,45 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <div class="untree_co-section bg-light">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-7 text-center" data-aos="fade-up" data-aos-delay="0">
+                <h1 class="mb-5 mt-5">The Right Course For You...!</h1>
+                <p>Our Movie Making Course offers everything you need to become a filmmaker. Learn scriptwriting, cinematography, editing, and sound design through expert guidance and hands-on projects. Whether you're a beginner or looking to refine your skills, this course helps bring your creative vision to life and advance your filmmaking journey.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+        @foreach($courses as $course)
+            <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0 d-flex">
+                <div class="custom-media w-100 d-flex flex-column">
+                    <!-- Use the same static images -->
+                    <a href="#">
+                        @php
+                            $imageIndex = ($loop->index % 3) + 1; // Cycle through 1, 2, 3
+                            $imagePath = "asset/img/about-" . ($imageIndex == 1 ? 'a' : ($imageIndex == 2 ? 'b' : 'c')) . ($imageIndex == 3 ? '.jpeg' : '.jpg');
+                        @endphp
+                        <img src="{{ asset($imagePath) }}" alt="{{ $course->course_name }}" class="img-fluid" style="height: 250px;">
+                    </a>
+                    <div class="custom-media-body d-flex flex-column flex-grow-1">
+                        <!-- Dynamically fetch course title -->
+                        <h3>{{ $course->course_name }}</h3>
+                        <!-- Static description (replace with dynamic if needed) -->
+                        <p class="mb-4 flex-grow-1 " style= "text-align: justify;">{{ $course->description }}</p>
+                        <div class="border-top d-flex justify-content-between pt-3 mt-3 align-items-center">
+                            <!-- Dynamically fetch course price -->
+                            <div>
+                                <span class="price">${{ number_format($course->price, 2) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+</div>
+    </div>
+</div>
   <div class="untree_co-section mt-5">
     <div class="container">
       <div class="row justify-content-between">
@@ -161,7 +200,7 @@
           </div>
 
           <p data-aos="fade-up" data-aos-delay="200">
-            <a href="" class="btn btn-primary mr-1">Admission</a>
+            <a href="{{ route('join_now') }}" class="btn btn-primary mr-1">Admission</a>
           </p>
         </div>
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
@@ -226,9 +265,7 @@
 
               <h3 class="pricing-plan-title">Starter</h3>
               <div class="price"><span class="fig">$50.99</span><span>/month</span></div>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-              <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
+              <p class="mb-4" style="text-align: justify;"> The Starter plan is designed for individuals or small businesses looking for essential features at an affordable price. It provides access to basic tools and services, making it ideal for those just starting out or with minimal requirements. The plan includes all the necessary features to get started, ensuring a smooth and cost-effective entry into the service.</p>
             </div>
           </div>
         </div>
@@ -239,9 +276,7 @@
 
               <h3 class="pricing-plan-title">Business</h3>
               <div class="price"><span class="fig">$99.99</span><span>/month</span></div>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-              <p><a href="#" class="btn btn-primary">Get Started</a></p>
+              <p class="mb-4" style="text-align: justify;">The Business plan is tailored for growing businesses or professionals who need more advanced features and capabilities. This plan offers enhanced tools and services to support scalability, productivity, and efficiency. It’s perfect for businesses looking to expand their operations and take advantage of additional resources to meet their goals.</p>
             </div>
           </div>
         </div>
@@ -252,15 +287,14 @@
 
               <h3 class="pricing-plan-title">Premium</h3>
               <div class="price"><span class="fig">$199.99</span><span>/month</span></div>
-              <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-
-              <p><a href="#" class="btn btn-outline-primary">Get Started</a></p>
+              <p class="mb-4" style="text-align: justify;">The Premium plan is the top-tier offering, designed for large businesses or users with high-demand needs. It includes all the features of the Starter and Business plans, along with exclusive tools, priority support, and advanced functionalities. This plan is ideal for those seeking the highest level of service, performance, and customization.</p>
             </div>
           </div>
         </div>
-      </div>
+      </div>     
     </div>
   </div> <!-- /.untree_co-section -->
+  
 
   <div class="untree_co-section">
     <div class="container">

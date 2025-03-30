@@ -11,16 +11,17 @@ use App\Http\Controllers\auth\PasswordResetMail;
 use App\Http\Controllers\CustomerRequestController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\AboutUsController;
 
 
 
-Route::get('/aboutus', function () {
-    return view('aboutus');
-})->name('about');
-Route::get('/contactus', function () {
-    return view('contact');
-})->name('contact');
-Route::post('/form-submit', [MessageController::class, 'store'])->name('form.submit');
+// Route::get('/aboutus', function () {
+//     return view('aboutus');
+// })->name('about');
+Route::get('/aboutus', [AboutUsController::class, 'index'])->name('about');
+Route::get('/about-us', [AboutUsController::class, 'index']);
+
+
 Route::get('/level_one', function () {
     return view('level_one');
 })->name('level_one');
@@ -40,6 +41,7 @@ Route::get('/courses/{id}/edit', [CourseController::class, 'edit'])->name('cours
 Route::post('/courses/{id}', [CourseController::class, 'update'])->name('courses.update');
 Route::delete('/courses/{id}', [CourseController::class, 'destroy'])->name('courses.destroy');
 Route::delete('/courses/listing', [CourseController::class, 'courselist']);
+Route::post('/join-course/{courseId}', [CourseController::class, 'joinCourse'])->name('join.course');
 
 #enquiry management
 Route::get('/join_now', [JoinnowController::class, 'index'])->name('join_now');
@@ -72,7 +74,6 @@ Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edi
 Route::post('/users/{id}', [UserController::class, 'update'])->name('users.update');
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
-
 #payments
 Route::get('/payments', [PaymentController::class, 'index'])->name('payments');
 Route::post('/payments/store', [PaymentController::class, 'store'])->name('payments.store');
@@ -83,10 +84,24 @@ Route::post('/payments/{id}', [PaymentController::class, 'update'])->name('payme
 Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments.destroy');
 
 #customer request
-Route::post('/form-submit', [CustomerRequestController::class, 'store'])->name('form.submit');
+Route::post('/form_submit', [CustomerRequestController::class, 'store'])->name('form_submit');
 
 Route::get('/', [IndexController::class,'index'])->name('index');
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/users_listing', [UserController::class, 'users_listing'])->name('users.listing');
+    // Emergency contact routes
+    Route::get('/users_emergency', [UserController::class, 'emergency'])->name('users_emergency');
+    Route::post('/users_emergency/contact', [UserController::class, 'emergency_contact_store'])->name('users_emergency.contact');
 });
+#Contact us 
+
+// Show contact form (using controller)
+Route::get('/contactus', [MessageController::class, 'index'])->name('contact');
+Route::post('/form-submit', [MessageController::class, 'store'])->name('form.submit');
+// Route::post('/contactus/list', [MessageController::class, 'list'])->name('contactus_list');
+Route::get('/contactus_list', [MessageController::class, 'list'])->name('contactus_list');
+Route::get('/contactus/{id}', [MessageController::class, 'show'])->name('contactus.show');
+Route::get('/contactus/{id}/edit', [MessageController::class, 'edit'])->name('contactus.edit');
+Route::post('/contactus/{id}', [MessageController::class, 'update'])->name('contactus.update');
+Route::delete('/contactus/{id}', [MessageController::class, 'destroy'])->name('contactus.destroy');

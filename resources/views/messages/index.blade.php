@@ -26,7 +26,7 @@
         }
     </style>
     <div class="container-fluid">
-            <h1 class="mt-4">User Module</h1>
+            <h1 class="mt-4">Message Module</h1>
                         @if(session('success'))
                         <div class="alert alert-success col-12">
                             {{ session('success') }}
@@ -36,13 +36,7 @@
                 <div class="card mb-4">
                     <div class="card-header d-flex justify-content-between align-items-center">
                         <div>
-                            <i class="fa fa-user mr-1"></i>Users Details
-                        </div>
-                        <div class="col-3 text-right">
-                            <a href="{{ route('users.create') }}" class="btn btn-primary">
-                                <i class="fa fa-plus mr-1" aria-hidden="true"></i>
-                                <span>New User</span>
-                            </a>
+                            <i class="fa fa-envelope mr-1"></i>Message Details
                         </div>
                     </div>
                     <div class="card-body">
@@ -51,54 +45,43 @@
                                 <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>User Name</th>
+                                        <th>Name</th>
                                         <th>Email</th>
-                                        <th>Role</th>
-                                        <th>Enrolled Courses</th> 
+                                        <th>subject</th>
+                                        <th>Message</th>
+                                        <th>Date</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($Users as $User)
+                                @foreach($Messages as $Message)
                                     <tr>
                                        <td>{{ $loop->iteration }}</td>
-                                        <td>{{ $User->first_name . ' ' . $User->last_name }}</td>
-                                        <td>{{ $User->email }}</td>
-                                        <td>{{ $User->role }}</td>
+                                        <td>{{ $Message->name }}</td>
+                                        <td>{{ $Message->email }}</td>
+                                        <td>{{ $Message->subject }} days</td>
+                                        <td>{{ $Message->message }}</td>
+                                        <td>{{ $Message->created_at }}</td>
                                         <td>
-                                            @if($User->courses->isEmpty())
-                                                <span class="text-muted">No courses enrolled</span>
-                                            @else
-                                                <ul class="list-unstyled">
-                                                    @foreach($User->courses as $course)
-                                                    
-                                                        <li>{{ $loop->iteration }}. {{ $course->course_name }}</li>
-                                                    @endforeach
-                                                </ul>
-                                            @endif
-                                        </td>
-                                        <td>
-                                              <!-- Edit Button -->
-                                                <a href="{{ route('users.edit', $User->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
+                                           <!-- Edit Button -->
+                                           <a href="{{ route('contactus.edit', $Message->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-
+                                                <!-- Show Button -->
+                                                <a href="{{ route('contactus.show', $Message->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>    
                                                 <!-- Delete Button (with confirmation) -->
-                                                <form action="{{ route('users.destroy', $User->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this course?');">
+                                                <form action="{{ route('contactus.destroy', $Message->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this Message?');">
                                                     @csrf
                                                     @method('DELETE') <!-- Spoof the DELETE method -->
                                                     <button type="submit" class="btn btn-sm" style="background: none; border: none; padding: 0;">
                                                     <i class="fas fa-trash-alt"></i>
                                                     </button>
                                                 </form>
-
-                                                <!-- Show Button -->
-                                                <a href="{{ route('users.show', $User->id) }}" class="btn btn-sm" style="display:inline-block; padding: 0;">
-                                                    <i class="fa fa-eye"></i>
-                                                </a>
                                         </td>
                                     </tr>
-                                @endforeach                              
+                                @endforeach                                        
                                 </tbody>
                             </table>
                         </div>

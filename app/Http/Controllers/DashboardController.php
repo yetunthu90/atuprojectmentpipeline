@@ -8,14 +8,15 @@ use App\Models\Payment;
 use App\Models\Course;
 use App\Models\User;
 use App\Models\CustomerRequest;
+use App\Models\Message;
 
 class DashboardController extends Controller
 {
     public function index()
     {
         $user = auth()->user();
-        // Count total payment methods
-        $totalPayments = Payment::count();
+        // Count total Message methods
+        $totalMessage = Message::count();
 
         // Count total courses
         $totalCourses = Course::count();
@@ -30,7 +31,7 @@ class DashboardController extends Controller
         $loggedInUser = auth()->user();
 
         // Pass data to the dashboard view
-        return view('dashboard',['user' => $user], compact('totalPayments', 'totalCourses', 'totalUsers', 'totalEnquiries' , 'Customer_request','loggedInUser'));
+        return view('dashboard',['user' => $user], compact('totalMessage', 'totalCourses', 'totalUsers', 'totalEnquiries' , 'Customer_request','loggedInUser'));
 
     }
 

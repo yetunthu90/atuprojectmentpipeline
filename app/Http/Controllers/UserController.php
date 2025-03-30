@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Illuminate\Validation\Rule;
+use App\Models\Message;
 use App\Models\Course;
+
 
 class UserController extends Controller
 {
@@ -93,10 +95,32 @@ class UserController extends Controller
     }
     public function users_listing()
     {   
-         // Fetch the latest 3 courses ordered by created_at
-          $courses = Course::latest()->take(3)->get();
+         // Fetch the latest courses ordered by created_at
+         $courses = Course::all();
          // Pass data to the index view
          return view('users.users_listing',compact('courses'));
              
     }
+   
+public function emergency()
+{
+    return view('users.emergency_contact'); // This shows your contact form
+}
+
+public function emergency_contact_store(Request $request)
+{
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email',
+        'subject' => 'required|string|max:255',
+        'message' => 'required|string',
+    ]);
+
+    // Store the message (assuming you have a Message model)
+    Message::create($validated);
+
+    // Redirect back to users listing with success message
+    return redirect()->route('users.listing')
+                   ->with('success', 'Your message has been sent!');
+}
 }

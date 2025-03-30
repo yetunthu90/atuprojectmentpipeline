@@ -34,4 +34,9 @@ class Course extends Model
         {
             return $this->hasMany(CustomerRequest::class, 'course_id');
         }
+    // Define the many-to-many relationship with User
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'course_user');
+    }
 }

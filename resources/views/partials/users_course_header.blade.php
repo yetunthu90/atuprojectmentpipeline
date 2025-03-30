@@ -10,7 +10,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ route('login') }}" class="nav-item nav-link welcome-link">
+                <a href="{{ route('users.listing') }}" class="nav-item nav-link welcome-link">
                     @if(isset($loggedInUser))
                         <p class="welcome-text">Welcome, {{ $loggedInUser->first_name . ' ' . $loggedInUser->last_name }}</p>
                     @else
@@ -26,12 +26,15 @@
                         </form>
                     </div>
                 </div>    
-                <a href="{{ route('contact') }}" class="nav-item nav-link">Contact</a>  
+                <!-- <a href="{{ route('users_emergency') }}" class="nav-item nav-link">Emergency Contact</a>   -->
+                <a href="{{ route('users_emergency') }}" class="nav-item nav-link">Need Assitance</a>
             </div>
             <!-- <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> -->
         </div>
     </nav>
     <!-- Navbar End -->
+    
+
 </header>
 <style>
     /* Add this to your CSS file or <style> tag */
