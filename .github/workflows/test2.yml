@@ -8,27 +8,36 @@ on:
 permissions:
   contents: read
   issues: write
-  actions: write
-  security-events: write
+  actions: read
 
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: ZAP Security Scan
+    container:
+      image: zaproxy/zap-stable
+      options: --user root -v /var/run/docker.sock:/var/run/docker.sock
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Create .zap directory
-        run: mkdir -p .zap && touch .zap/rules.tsv
+      - name: Create required directories
+        run: |
+          mkdir -p .zap
+          touch .zap/rules.tsv
+          chmod -R 777 .zap
 
-      - name: Run ZAP Scan
-        uses: zaproxy/action-baseline@v0.6.1
+      - name: Run ZAP Scan (No Artifacts)
+        run: |
+          zap-baseline.py -t http://134.33.240.44/ -a \
+          -J zap_report.json -w zap_report.md -r zap_report.html \
+          --hook=zap/outcome_hook.py
+          
+      - name: Upload scan results as artifact
+        uses: actions/upload-artifact@v3
+        if: always()
         with:
-          target: 'http://134.33.240.44/'
-          cmd_options: '-a'
-          upload_artifact: false  # Disable problematic artifact upload
-          create_issue: true      # Keep issue creation
-          artifact_name: ''       # Empty name prevents upload attempt
-        env:
-          ZAP_WRITE_PERMISSIONS: 'true'  # Fixes /zap/wrk permissions
+          name: zap-scan-results
+          path: |
+            zap_report.*
+            output.txt
