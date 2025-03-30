@@ -13,14 +13,14 @@ jobs:
         with:
           ref: main
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.6.1
+        uses: zaproxy/action-baseline@v0.12.0
         with:
           docker_name: 'zaproxy/zap-stable'
           token: ${{ secrets.GITHUB_TOKEN }}
           target: 'http://134.33.240.44/'
-         # rules_file_name: '.zap/rules.tsv'
-         # cmd_options: '-a'
-         # upload_artifact: false
-          args: '-a -J report.json -w report.md'  # Generate reports without upload
-          artifact_name: ''  # Empty name prevents upload attempt
+          rules_file_name: '.zap/rules.tsv'
+          cmd_options: '-a'
+          upload_artifact: false
+          #args: '-a -J report.json -w report.md'  # Generate reports without upload
+          #artifact_name: ''  # Empty name prevents upload attempt
 
