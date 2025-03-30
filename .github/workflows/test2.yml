@@ -1,0 +1,34 @@
+name: ZAP Security Scan
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  actions: write
+  security-events: write
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    name: ZAP Security Scan
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create .zap directory
+        run: mkdir -p .zap && touch .zap/rules.tsv
+
+      - name: Run ZAP Scan
+        uses: zaproxy/action-baseline@v0.12.0
+        with:
+          target: 'http://134.33.240.44/'
+          cmd_options: '-a'
+          upload_artifact: false  # Disable problematic artifact upload
+          create_issue: true      # Keep issue creation
+          artifact_name: ''       # Empty name prevents upload attempt
+        env:
+          ZAP_WRITE_PERMISSIONS: 'true'  # Fixes /zap/wrk permissions
