@@ -20,3 +20,4 @@ jobs:
           target: 'http://134.33.240.44/'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
+          upload_artifact: false
