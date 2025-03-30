@@ -84,7 +84,7 @@ Route::post('/payments/{id}', [PaymentController::class, 'update'])->name('payme
 Route::delete('/payments/{id}', [PaymentController::class, 'destroy'])->name('payments.destroy');
 
 #customer request
-Route::post('/form-submit', [CustomerRequestController::class, 'store'])->name('form.submit');
+Route::post('/form_submit', [CustomerRequestController::class, 'store'])->name('form_submit');
 
 Route::get('/', [IndexController::class,'index'])->name('index');
 Route::middleware('auth')->group(function () {
