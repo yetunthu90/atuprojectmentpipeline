@@ -21,4 +21,6 @@ jobs:
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
           upload_artifact: false
+          args: '-a -J report.json -w report.md'  # Generate reports without upload
+          artifact_name: ''  # Empty name prevents upload attempt
 
