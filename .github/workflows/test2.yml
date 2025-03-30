@@ -33,11 +33,11 @@ jobs:
           -J zap_report.json -w zap_report.md -r zap_report.html \
           --hook=zap/outcome_hook.py
           
-      - name: Upload scan results as artifact
-        uses: actions/upload-artifact@v3
-        if: always()
-        with:
-          name: zap-scan-results
-          path: |
-            zap_report.*
-            output.txt
+      # - name: Upload scan results as artifact
+      #   uses: actions/upload-artifact@v4
+      #   if: always()
+      #   with:
+      #     name: zap-scan-results
+      #     path: |
+      #       zap_report.*
+      #       output.txt
