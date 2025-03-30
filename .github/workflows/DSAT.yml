@@ -18,9 +18,9 @@ jobs:
           docker_name: 'zaproxy/zap-stable'
           token: ${{ secrets.GITHUB_TOKEN }}
           target: 'http://134.33.240.44/'
-          rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
-          upload_artifact: false
+         # rules_file_name: '.zap/rules.tsv'
+         # cmd_options: '-a'
+         # upload_artifact: false
           args: '-a -J report.json -w report.md'  # Generate reports without upload
           artifact_name: ''  # Empty name prevents upload attempt
 
