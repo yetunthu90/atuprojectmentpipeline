@@ -13,7 +13,7 @@ jobs:
         with:
           ref: main
       - name: ZAP Scan
-        uses: zaproxy/action-baseline@v0.9.0
+        uses: zaproxy/action-baseline@v0.12.0
         with:
           docker_name: 'zaproxy/zap-stable'
           target: 'http://134.33.240.44/'
