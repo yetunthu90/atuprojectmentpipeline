@@ -1,4 +1,4 @@
-# Studio Glibi PROJECT
+# Studio Ghibli PROJECT
 
 <img width="1086" height="654" alt="Screenshot 2026-03-11 at 12 48 49" src="https://github.com/user-attachments/assets/6dc1c45e-03e1-4e51-a357-a50051128479" />
 Figure: System Architecture Diagram
